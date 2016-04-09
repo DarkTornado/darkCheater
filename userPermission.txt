@@ -1,1 +1,1 @@
-&login&reg2ister&
+&login&register&
