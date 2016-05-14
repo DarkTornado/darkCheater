@@ -1,0 +1,3 @@
+﻿DCMS Basic Library::1.0
+ModPE Expansion Library::1.0
+File IO Library::1.0
