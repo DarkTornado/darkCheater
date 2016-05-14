@@ -75,10 +75,10 @@ if(tf){
 for(var n=0;n<4096;n++){
 if(Item.isValidItem(n)) items.push(n);
 }
+}
 else{
 for(var n=256;n<4096;n++){
 if(Item.isValidItem(n)) items.push(n);
-}
 }
 }
 return items;
