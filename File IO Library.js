@@ -110,7 +110,7 @@ if(tf){
 var folder = new java.io.File(path);
 folder.mkdir();
 var pp = path2.toString().split("/");
-path2 = path2+pp[pp.length-1].substring(0, lastIndexOf(".");
+path2 = path2+pp[pp.length-1].substring(0, lastIndexOf("."));
 }
 var fis = new java.io.FileInputStream(path1);
 var zis = new java.util.zip.ZipInputStream(fis);
