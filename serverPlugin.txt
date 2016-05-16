@@ -1,0 +1,133 @@
+﻿ctx.runOnUiThread(new java.lang.Runnable({
+run : function(){
+try{
+menuS3 = new android.widget.PopupWindow();
+var title = makeTitle("Server Plugin");
+var layout = new android.widget.LinearLayout(ctx);
+layout.setOrientation(1);
+var menusT = ["PVP 방지", "표지판 TP", "블록 설치 내역 기록", "블록 설치 방지", "플레이어 사망시 아이템 드롭 방지", "서버원 로그인 사용", "광산 사용"];
+var btnT = new Array();
+for(var n in menusT){
+btnT[n] = new android.widget.ToggleButton(ctx);
+btnT[n].setTextOn(menusT[n]);
+btnT[n].setTextOff(menusT[n]);
+btnT[n].setTextColor(white);
+}
+btnT[0].setChecked(noPvp);
+btnT[1].setChecked(signTp);
+btnT[2].setChecked(blockLog);
+btnT[3].setChecked(antiBlock);
+btnT[4].setChecked(deathAntiLack);
+btnT[5].setChecked(useLogin);
+btnT[6].setChecked(useMine);
+btnT[0].setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+onCheckedChanged : function(toggle, onoff){
+noPvp = onoff;
+}
+}));
+btnT[1].setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+onCheckedChanged : function(toggle, onoff){
+signTp = onoff;
+}
+}));
+btnT[2].setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+onCheckedChanged : function(toggle, onoff){
+blockLog = onoff;
+}
+}));
+btnT[3].setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+onCheckedChanged : function(toggle, onoff){
+antiBlock = onoff;
+}
+}));
+btnT[4].setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+onCheckedChanged : function(toggle, onoff){
+deathAntiLack = onoff;
+}
+}));
+btnT[5].setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+onCheckedChanged : function(toggle, onoff){
+useLogin = onoff;
+}
+}));
+btnT[6].setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+onCheckedChanged : function(toggle, onoff){
+useMine = onoff;
+}
+}));
+for(var n in menusT)
+layout.addView(btnT[n]);
+var btns = new Array();
+var menus = ["블록 설치 내역", "대화 내용 보기", "채팅창 비우기", "서버원 접속 내역", "공지 띄우기", "광산 설정"];
+for(var n in menus)
+btns[n] = makeButton(menus[n]);
+btns[0].setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(v){
+Dark.showDialog("블록 설치 내역", blockString);
+}
+});
+btns[0].setOnLongClickListener(new android.view.View.OnLongClickListener(){
+onLongClick: function(v){
+blockString = "";
+Dark.toast("블록 설치 내역이 초기화 되었습니다.");
+return true;
+}
+});
+btns[1].setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(v){
+showChatLog();
+}
+});
+btns[2].setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(v){
+Dark.clearChat();
+net.zhuoweizhang.mcpelauncher.ScriptManager.callScriptMethod("chatReceiveHook", ["채팅창 비우기 사용", "Dark Cheater"]);
+}
+});
+btns[3].setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(v){
+Dark.showDialog("서버원 접속 내역", serverLog);
+}
+});
+btns[4].setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(v){
+showNotice(false);
+}
+});
+btns[4].setOnLongClickListener(new android.view.View.OnLongClickListener(){
+onLongClick: function(v){
+if(Dark.isMulti()) Dark.toast("멀티 중에는 도배에 악용할 가능성이 있어, 제작자가 사용할 수 없도록 막았습니다.");
+else showNotice(true);
+return true;
+}
+});
+btns[5].setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(v){
+mineSet = 1;
+Dark.toast("지점 1을 터치하세요...");
+}
+});
+btns[5].setOnLongClickListener(new android.view.View.OnLongClickListener(){
+onLongClick: function(v){
+selectMineType(false);
+Dark.toast("삭제할 광산들의 종류를 선택하세요...");
+return true;
+}
+});
+for(var n in menus)
+layout.addView(btns[n]);
+var exit = makeExit(menuS3);
+layout.addView(exit);
+var scroll = makeScroll(layout, menuS3);
+var layout2 = new android.widget.LinearLayout(ctx);
+layout2.setOrientation(1);
+layout2.addView(title);
+layout2.addView(scroll);
+menuS3.setContentView(layout2);
+menuS3.showAtLocation(ctx.getWindow().getDecorView(),android.view.Gravity.CENTER|android.view.Gravity.CENTER, 0, 0);
+}
+catch(e){
+clientMessage(e+", "+e.lineNumber);
+}
+}
+}));
