@@ -1,7 +1,7 @@
 ﻿/*
 DCMS Compiler
 version 1.0
-© 2015 Dark Tornado, All rights reserved.
+© 2016 Dark Tornado, All rights reserved.
 */
 
 const DCMS = {
