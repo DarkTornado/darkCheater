@@ -197,7 +197,7 @@ use.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChange
 onCheckedChanged : function(swit, onoff){
 Dark.save("useDcms", onoff);
 if(onoff){
-dcmsData = {consts : "", vars : "", useItem : "", attackHook : "", deathHook : "", modSecond : "", chatHook : ""};
+dcmsData = {consts : "", vars : "", useItem : "", attackHook : "", deathHook : "", modSecond : "", chatHook : "", selectLevelHook : "", serverConnectHook : "", leaveGame : ""};
 DCMS.compile();
 }
 else{
@@ -234,7 +234,7 @@ DCMS.selectLibrary(data);
 }).start();
 break;
 case 4 : 
-Dark.showDialog("냥파스-!", "니파-☆");
+Dark.showDialog("도움말", "DCMS는 Dark Cheater Modify Script의 약자로, 다크 치터에 적용하는 스크립트(?)입니다. 당연히, ModPE 스크립트가 기반이며, 확장자는 .dcms입니다.\n일부 DCMS는 라이브러리를 필요로 합니다. 라이러리가 없을 시, 오류가 발생합니다.\nDCMS 사용 여부를 껐다가 킬 때, 오류가 발생하는 경우, 사용 여부를 비활성화 시키식 블록런처를 다시 실행한 뒤, 사용 여부를 다시 활성화 시키시면 됩니다.");
 break;
 }
 }
