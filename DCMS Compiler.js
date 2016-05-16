@@ -29,7 +29,7 @@ if(value[n].search("entityHit")!=-1) dcmsData.attackHook += value[n].substring(v
 if(value[n].search("entityDie")!=-1) dcmsData.deathHook += value[n].substring(value[n].indexOf("){")+2, value[n].lastIndexOf("}"))+"\n";
 if(value[n].search("modSecond")!=-1) dcmsData.modSecond += value[n].substring(value[n].indexOf("){")+2, value[n].lastIndexOf("}"))+"\n";
 if(value[n].search("chatSend")!=-1) dcmsData.chatHook += value[n].substring(value[n].indexOf("){")+2, value[n].lastIndexOf("}"))+"\n";
-if(value[n].search("selectMap")!=-1) dcmsData.selectLevelHook += value[n].substring(value[n].indexOf("){")+2, value[n].lastIndexOf("}"))+"\n";
+if(value[n].search("selectMap")!=-1) dcmsData.newLevel += value[n].substring(value[n].indexOf("){")+2, value[n].lastIndexOf("}"))+"\n";
 if(value[n].search("selectServer")!=-1) dcmsData.serverConnectHook += value[n].substring(value[n].indexOf("){")+2, value[n].lastIndexOf("}"))+"\n";
 if(value[n].search("quitToTitle")!=-1) dcmsData.leaveGame += value[n].substring(value[n].indexOf("){")+2, value[n].lastIndexOf("}"))+"\n";
 }
@@ -197,7 +197,7 @@ use.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChange
 onCheckedChanged : function(swit, onoff){
 Dark.save("useDcms", onoff);
 if(onoff){
-dcmsData = {consts : "", vars : "", useItem : "", attackHook : "", deathHook : "", modSecond : "", chatHook : "", selectLevelHook : "", serverConnectHook : "", leaveGame : ""};
+dcmsData = {consts : "", vars : "", useItem : "", attackHook : "", deathHook : "", modSecond : "", chatHook : "", newLevel : "", serverConnectHook : "", leaveGame : ""};
 DCMS.compile();
 }
 else{
