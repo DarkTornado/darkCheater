@@ -81,8 +81,8 @@ This ModPE Script include malicious code.
 - 최대 체력 설정
 - 갑옷 슬롯 보기
 - OP 권한 부여/회수
-   └.day
-   └.night
+   - .day
+   - .night
    └.tp
    └.add
    └.give
