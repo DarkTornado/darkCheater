@@ -16,5 +16,5 @@ This ModPE Script include malicious code.
 
 ### 인벤토리 수정(Inventory)
 
--아이템 지급/들고 있는 아이템으로 설정(Add Item/Set CarriedItem)
-- 
+- 아이템 지급/들고 있는 아이템으로 설정(Add Item/Set CarriedItem)
+ 
