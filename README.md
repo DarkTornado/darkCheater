@@ -16,53 +16,52 @@ This ModPE Script include malicious code.
 
 ### 인벤토리 수정(Inventory)
 
-- 터치한 창고 내용 수정
-- 인벤토리 세이브
-- 아이템 지급/들고 있는 아이템으로 설정(Add Item/Set CarriedItem)
-- 아이템 추가(크리에이티브인 경우, 들고 있는 아이템 변경)
-- 아이템 목록
-- 아이템 검색
-- 인벤토리 리셋
-- 들고 있는 아이템 삭제
-- 인첸트
-- 인첸트 해제
-- 아이템 이름 변경
-- 아이템 코드 확인
-- 갑옷 지급
-- MCPC 아이템 코드 확인
-- 포션 조합법 보기
+- 터치한 창고 내용 수정(Edit Touched Chest)
+- 인벤토리 세이브(Inventory Save)
+- 아이템 지급/들고 있는 아이템으로 설정(Add Item/Set Carried Item)
+- 아이템 목록(Item List)
+  - 아이템 검색(Item Search)
+- 인벤토리 리셋(Reset Inv.)
+- 들고 있는 아이템 삭제(Remove Carried Item)
+- 인첸트(Enchantment)
+  - 인첸트 해제(Remove Enchantment)
+- 아이템 이름 변경(Change Item's Name)
+- 아이템 아이디(Item Id List)
+  - PC 아이템 아이디(Item Id List in MCPC)
+- 갑옷 지급(Give Armor)
+- 포션 조합법 보기(Potion Recipe)
 
-### 갑옷 슬롯 수정
+### 갑옷 슬롯 수정(Armor Slot)
 
-- 갑옷 내용 수정
-- 모든 갑옷의 내구도 수리
-- 갑옷 바로 입기
+- 갑옷 내용 수정(Edit Armor Slot)
+- 모든 갑옷의 내구도 수리(Fix All Armors)
+- 갑옷 바로 입기(Wear Armor Sat)
 
-### 다크 포인트
+### 다크 포인트(Dark Point)
 
-- 화면에 다크 포인트 표시
-- 다크 스킬
-- 다크 인첸트
-- 모든 인첸트 해제
-- Dark Tornado's Book 지급
-- 다크 포인트 설정
-- 다크 포인트 도움말
+- 화면에 다크 포인트 표시(Show Dark Point)
+- 다크 스킬(Dark Skill)
+- 다크 인첸트(Dark Enchant)
+- 모든 인첸트 해제(Remove All Enchantments)
+- Dark Tornado's Book 지급(Give Dark Tornado's Book)
+- 다크 포인트 설정(Dark Point Settings)
+- 다크 포인트 도움말(Help)
 
-### 월드 정보 수정
+### 월드 정보 수정(World Info)
 
-- 월드이름, 맵 폴더이름 보기
-- 시간 고정
-- 시간 설정
-- 게임모드 변경
-- 체력 설정
-- 허기 설정
-- 플레이어 이동
-- 날씨 설정
-- 주변 창고 내용 수정 (0.12.1 이상에서 작동 X)
-- 다른 월드로 이동 (0.12.1 이상에서 팅김)
-- 레벨/경험치 설정
+- 월드이름, 맵 폴더이름 보기(Show World's name and folder name)
+- 시간 고정(Time Lock)
+- 시간 설정(Time Set)
+- 게임모드 변경(Change Game Mode)
+- 체력 설정(Set Health)
+  - 허기 설정(Set Hunger)
+- 플레이어 이동(Move Player)
+- 날씨 설정(Weather Set)
+- 주변 창고 내용 수정(Edit Surround Chests) (0.12.1 이상에서 작동 X, Do not work over 0.12.1)
+- 다른 월드로 이동(Go to Another Map)
+- 레벨/경험치 설정(Set Lv./Exp.)
 
-### 플레이어 관리
+### 플레이어 관리(Player Manager)
 
 - 플레이어 체력 표시
 - 체력 설정
@@ -81,17 +80,17 @@ This ModPE Script include malicious code.
 - 최대 체력 설정
 - 갑옷 슬롯 보기
 - OP 권한 부여/회수
-   - .day
-   - .night
-   └.tp
-   └.add
-   └.give
-   └.go
-   └.health
-   └.kill(OP가 서버장에게 사용 불가)
-   └.call
-   └.heal
-   └.kick(OP가 서버장에게 사용 불가)
+  - .day
+  - .night
+  - .tp
+  - .add
+  - .give
+  - .go
+  - .health
+  - .kill(OP가 서버장에게 사용 불가)
+  - .call
+  - .heal
+  - .kick(OP가 서버장에게 사용 불가)
 
 ### 플레이어들 관리
 
@@ -122,7 +121,7 @@ This ModPE Script include malicious code.
 - 터치한 엔티티 즉사
 - 터치한 엔티티 체력 표시
 - 엔티티 스폰
-   └목록에 없는 엔티티 스폰
+  - 목록에 없는 엔티티 스폰
 - 엔티티 삭제
 - 모든 엔티티 삭제
 - 엔티티 탑승
@@ -148,35 +147,35 @@ This ModPE Script include malicious code.
 - 지점 1, 2 사이를 특정 블록으로 채움(인벤에디터의 블록설정)
 - 지점 1, 2 사이의 특정 블록을 또다른 특정 블록으로 채움(인벤에디터의 블록변경)
 - 월드에딧(철칼&철굉이로 하는 것. 지형 수정과는 별계로 작동)
-   └월드에딧 GUI
-     └터치한 블록 정보
-     └들고 있는 블록 발 밑에 설치
-     └들고 있는 블록 머리 위에 설치 정렬
-     └들고 있는 블록으로 터치한 블록 변경
-     └아이템 지급(들고 있는 아이템 변경)
-     └철칼&철괭이 지급
-     └메뉴 위치 수정
-     └채우기
-     └바꾸기
-     └눈내리기
-     └얼리기
-     └나무삭제
-     └물삭제
-     └복사
-     └붙여넣기
-     └벽(내부 지형 삭제)
-     └벽(내부 지형 유지)
-     └원
-     └찬 원
-     └원기둥
-     └구
-     └반구
-     └찬 구
-     └직선
-     └직선(y축 포함)
-     └x축 대칭
-     └y축 대칭
-     └z축 대칭
+  - 월드에딧 GUI
+    - 터치한 블록 정보
+    - 들고 있는 블록 발 밑에 설치
+    - 들고 있는 블록 머리 위에 설치 정렬
+    - 들고 있는 블록으로 터치한 블록 변경
+    - 아이템 지급(들고 있는 아이템 변경)
+    - 철칼&철괭이 지급
+    - 메뉴 위치 수정
+    - 채우기
+    - 바꾸기
+    - 눈내리기
+    - 얼리기
+    - 나무삭제
+    - 물삭제
+    - 복사
+    - 붙여넣기
+    - 벽(내부 지형 삭제)
+    - 벽(내부 지형 유지)
+    - 원
+    - 찬 원
+    - 원기둥
+    - 구
+    - 반구
+    - 찬 구
+    - 직선
+    - 직선(y축 포함)
+    - x축 대칭
+    - y축 대칭
+    - z축 대칭
 - 서버원용 월드에딧(멀티 지원 월드에딧. 지형수정과 월드에딧과는 별계로 작동.)
 - 서버원용 월드에딧 GUI(별도의 스크립트 필요)
 
@@ -331,25 +330,25 @@ This ModPE Script include malicious code.
 - 윈도우 10 GUI 사용
 - 메뉴에서 검은색 글자 사용
 - 웹 브라우저 설정
-   └전체 화면
-   └자바스크립트 허용
-   └줌 인/아웃 활성화
-   └폼 데이터 저장
-   └비밀번호 저장
-   └홈페이지 설정
+  - 전체 화면
+  - 자바스크립트 허용
+  - 줌 인/아웃 활성화
+  - 폼 데이터 저장
+  - 비밀번호 저장
+  - 홈페이지 설정
 - UI 변경
 - 메뉴 위치(좌/우) 변경
 - 버튼 위치 변경
 - 위젯 위치 수정
 - 추가 파일 다운로드
-   └스마트 무빙
-   └고급 테러(다운 불가)
-   └건물 소환
-   └월드 에딧
-   └Dark Cheater ESP
-   └setTile 메니저
-   └파티클 도우미
-   └고스트핵
+  - 스마트 무빙
+  - 고급 테러(다운 불가)
+  - 건물 소환
+  - 월드 에딧
+  - Dark Cheater ESP
+  - setTile 메니저
+  - 파티클 도우미
+  - 고스트핵
 - 채탕칭 도배문구 설정
 - 지도 범위 설정
 - 엔티티 스폰 방지 설정
