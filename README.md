@@ -63,23 +63,25 @@ This ModPE Script include malicious code.
 
 ### 플레이어 관리(Player Manager)
 
-- 플레이어 체력 표시
-- 체력 설정
-- 소환
-- 플레이어를 특정 위치로 이동
-- 플레이어에게 이동
-- 추방
-- 아이템 지급
-- 전원 사살&전원 소환
-- 포션 효과 부여
-- 포션 효과 삭제
-- 조지기
-- 위치 확인
-- 플레이어의 시야 보기
-- 칭호 부여/회수
-- 최대 체력 설정
-- 갑옷 슬롯 보기
-- OP 권한 부여/회수
+- 플레이어 체력 표시(Show Player Health)
+- 체력 설정(Set Health)
+- 소환(Summon)
+- 플레이어를 특정 위치로 이동(Move Player)
+- 플레이어에게 이동(Go to Player)
+- 추방(Kick)
+- 아이템 지급(Give Item)
+- 전원 사살(Kill All)
+- 전원 사살(Summon All)
+- 포션 효과 부여(Give Potion Effects)
+  - 포션 효과 삭제(Remove Potion Effects)
+- 조지기(Give a Fxxk)
+- 위치 확인(Check Position)
+- 플레이어의 시야 보기(See View)
+- 칭호 부여(Give Title)
+- 칭호 회수(Remove Title)
+- 최대 체력 설정(Set Max Health)
+- 갑옷 슬롯 보기(See Armor Slot)
+- OP 권한 부여/회수(Give OP/Remove OP)
   - .day
   - .night
   - .tp
@@ -87,126 +89,132 @@ This ModPE Script include malicious code.
   - .give
   - .go
   - .health
-  - .kill(OP가 서버장에게 사용 불가)
+  - .kill(OP가 서버장에게 사용 불가/OP cannot use this command to Admin)
   - .call
   - .heal
-  - .kick(OP가 서버장에게 사용 불가)
+  - .kick(OP가 서버장에게 사용 불가/OP cannot use this command to Admin)
 
-### 플레이어들 관리
+### 플레이어들 관리(Players Manager)
 
-- 체력 설정
-- 소환
-- 플레이어를 특정 위치로 이동
-- 플레이어에게 이동
-- 추방
-- 아이템 지급
-- 전원 사살&전원 소환
-- 포션 효과 부여
-- 포션 효과 삭제
-- 칭호 부여/회수
-- 최대 체력 설정
-- 조지기
+- 전체 선택(Select All)
+- 전체 해제(Unselect All)
+- 체력 설정(Set Health)
+- 소환(Summon)
+- 플레이어를 특정 위치로 이동(Move Player)
+- 플레이어에게 이동(Go to Player)
+- 추방(Kick)
+- 아이템 지급(Give Item)
+- 전원 사살(Kill All)
+- 전원 사살(Summon All)
+- 포션 효과 부여(Give Potion Effects)
+  - 포션 효과 삭제(Remove Potion Effects)
+- 조지기(Give a Fxxk)
+- 칭호 부여(Give Title)
+- 칭호 회수(Remove Title)
+- 최대 체력 설정(Set Max Health)
 
-### 밴 목록
+### 밴 목록(Ban Menu)
 
-- 플레이어 밴
-- 밴 목록 초기화
-- 블랙 리스트(닉네임 밴)
-- 맵 접속 방지
-- 화이트 리스트
+- 플레이어 밴(Ban Player)
+- 밴 목록 초기화(Reset Ban List)
+- 블랙 리스트(닉네임 밴) (Black List(Nickname Ban))
+- 맵 접속 방지(Block Map Access)
+- 화이트 리스트(White List)
+- C.I.W.L(Client Id White List)
 
-### 엔티티 관리
+### 엔티티 관리(Entity Manager)
 
-- 엔티티 생성 방지
-- 터치한 엔티티 즉사
-- 터치한 엔티티 체력 표시
-- 엔티티 스폰
-  - 목록에 없는 엔티티 스폰
-- 엔티티 삭제
-- 모든 엔티티 삭제
-- 엔티티 탑승
-- 엔티티 이름 짓기
-- 엔티티 코드 확인
-- 모든 엔티티들의 이름표 제거
-- 몹 배틀
+- 엔티티 생성 방지(Block Entity Spawn)
+- 엔티티 생성 방지(Show Entity Health)
+- 터치한 엔티티 즉사(Kill Touched Entity)
+- 터치한 엔티티 체력 표시(Show Touched Entity's Health)
+- 엔티티 스폰(Spwan Entity)
+  - 목록에 없는 엔티티 스폰(Spawn Entity not exists in Entity List)
+- 엔티티 삭제(Remove Entities)
+- 모든 엔티티 삭제(Remove All Entities)
+- 엔티티 탑승(Ride Entity)
+- 엔티티 이름 짓기(Name Entity)
+- 엔티티 코드 확인(Check Entity Type Id)
+- 모든 엔티티들의 이름표 제거(Remove All Entites' Name Tag)
+- 몹 배틀(Mob Battle)
 
-### 주변 엔티티 관리
+### 주변 엔티티 관리(Surround Entity Manager)
 
-- 엔티티 추적
-- 불붙이기
-- 체력감소
-- 체력 설정
-- 삭제
-- 포션 효과 부여
+- 엔티티 추적(Entity GPS)
+- 불붙이기(Set Fire Ticks)
+- 체력감소(Reduce Health)
+- 체력 설정(Set Health)
+- 삭제(Remove)
+- 포션 효과 부여(Give Potion Effects)
 
-### 지형 수정
+### 지형 수정(Terrain)
 
-- 터치한 블록 정보
-- 배드락 캐기
-- setTile 메니저
-- 지점 1, 2 사이를 특정 블록으로 채움(인벤에디터의 블록설정)
-- 지점 1, 2 사이의 특정 블록을 또다른 특정 블록으로 채움(인벤에디터의 블록변경)
-- 월드에딧(철칼&철굉이로 하는 것. 지형 수정과는 별계로 작동)
-  - 월드에딧 GUI
-    - 터치한 블록 정보
-    - 들고 있는 블록 발 밑에 설치
-    - 들고 있는 블록 머리 위에 설치 정렬
-    - 들고 있는 블록으로 터치한 블록 변경
-    - 아이템 지급(들고 있는 아이템 변경)
-    - 철칼&철괭이 지급
-    - 메뉴 위치 수정
-    - 채우기
-    - 바꾸기
-    - 눈내리기
-    - 얼리기
-    - 나무삭제
-    - 물삭제
-    - 복사
-    - 붙여넣기
-    - 벽(내부 지형 삭제)
-    - 벽(내부 지형 유지)
-    - 원
-    - 찬 원
-    - 원기둥
-    - 구
-    - 반구
-    - 찬 구
-    - 직선
-    - 직선(y축 포함)
-    - x축 대칭
-    - y축 대칭
-    - z축 대칭
-- 서버원용 월드에딧(멀티 지원 월드에딧. 지형수정과 월드에딧과는 별계로 작동.)
-- 서버원용 월드에딧 GUI(별도의 스크립트 필요)
+- 터치한 블록 정보(Touched Block Info.)
+- 배드락 캐기(Mining Bedrock)
+- setTile 메니저(setTile Manager)
+- 지점 1, 2 사이를 특정 블록으로 채움(인벤에디터의 블록설정) (Set Blocks)
+- 지점 1, 2 사이의 특정 블록을 또다른 특정 블록으로 채움(인벤에디터의 블록변경) (Replace Blocks)
+- 월드에딧(철칼&철굉이로 하는 것. 지형 수정과는 별계로 작동) (World Edit)
+  - 월드에딧 GUI (World Edit GUI)
+    - 터치한 블록 정보(Touched Block Info.)
+    - 들고 있는 블록 발 밑에 설치(Set Carried Block Under the Foot)
+    - 들고 있는 블록 머리 위에 설치(Set Carried Block Over the Head)
+    - 들고 있는 블록으로 터치한 블록 변경(Replace Touched Block to Carried Block)
+    - 아이템 지급/들고 있는 아이템 변경(Give Item/Set Carried Item)
+    - 철칼&철괭이 지급(Give Iron Sword and Iron Hoe)
+    - 메뉴 위치 수정(Edit Menu's Position)
+    - 채우기(Set)
+    - 바꾸기(Replace)
+    - 눈내리기(Snow)
+    - 얼리기(Freeze)
+    - 나무삭제(Remove Trees)
+    - 물삭제(Remove Water)
+    - 복사(Copy)
+    - 붙여넣기(Paste)
+    - 벽(내부 지형 삭제)(Wall(Remove Blocks in the Wall))
+    - 벽(내부 지형 유지)(Wall(Don't Remove Blocks in the Wall))
+    - 원(Circle)
+    - 찬 원(Filled Circle)
+    - 원기둥(Cylinder)
+    - 구(Sphere)
+    - 반구(Half Sphere)
+    - 찬 구(Filled Sphere)
+    - 직선(Line)
+    - 직선(y축 포함) (Line(Include Y Axis)
+    - x축 대칭(Symmetry X Axis)
+    - y축 대칭(Symmetry Y Axis)
+    - z축 대칭(Symmetry Z Axis)
+- 서버원용 월드에딧(멀티 지원 월드에딧. 지형수정과 월드에딧과는 별계로 작동.)(World Edit for Clients)
+- 서버원용 월드에딧 GUI(별도의 스크립트 필요) (World Edit for Clients' GUI)
 
-### 이동 계열
+### 이동 계열(Movement)
 
-- 공중부양 on/off
-- 블록 통과
-- 달리기
-- 줌 인
-- 자동 걷기
-- 매직 카펫
-- 제트팩
-- 벽타기(활성화시 한 칸짜리 블록 못올라감)
-- 숙이기
-- 스마트 무빙(추가 파일 다운로드 필요)
-- 낙뎀 방지
-- 점프 강화
-- 터치한 곳으로 순간이동/순보/포물선 점프
-- 좌표 기억/이동
-- 바라보는 곳으로 순간이동
+- 공중부양 on/off(Flying)
+- 블록 통과(Pass Blocks)
+- 달리기(Run)
+- 줌 인(Zoom)
+- 자동 걷기(Auto Walking)
+- 매직 카펫(Magic Carpet)
+- 제트팩(Jet Pack)
+- 벽타기(활성화시 한 칸짜리 블록 못올라감) (Climbing)
+- 숙이기 (Sneak)
+- 스마트 무빙(추가 파일 다운로드 필요) (Smart Moving)
+- 낙뎀 방지(Remove Falling Damage)
+- 점프 강화(Reinforce Jumping)
+- 터치한 곳으로 순간이동/순보/포물선 점프(TP/Dash/Flash Jump)
+- 좌표 기억/이동(Remember Position/Move)
+- 바라보는 곳으로 순간이동(Go to Looking Point)
 
-### D.L. Skill (능력자)
+### D.L. Skill (능력자, ESP)
 
-- 능력 원격 on/off
-- 자동수복&자동삭제 on/off
-- 서버장 폭발 데미지 on/off
-- 안티렉 리셋
-- 모든 능력 off
-- 철칼로 터치시 회복 (다른 스크립트에서 작동)
+- 능력 원격 on/off(Remove ESP on/off)
+- 자동수복&자동삭제 on/off(Auto Recovery/Auto Remove on/off)
+- 서버장 폭발 데미지 on/off(Explode Damage to Admin on/off)
+- 안티렉 리셋(Reset Anti Leck)
+- 모든 능력 off(Reset All ESP)
+- 철칼로 터치시 회복 (다른 스크립트에서 작동) (Healing by touching with Iron Sword)
 
-서버 관련
+### 서버 관련(Server Manager)
 
 - PVP 방지
 - 서버원 공중부양 방지
