@@ -96,8 +96,6 @@ This ModPE Script include malicious code.
 
 ### 플레이어들 관리(Players Manager)
 
-- 전체 선택(Select All)
-- 전체 해제(Unselect All)
 - 체력 설정(Set Health)
 - 소환(Summon)
 - 플레이어를 특정 위치로 이동(Move Player)
@@ -124,7 +122,7 @@ This ModPE Script include malicious code.
 
 ### 엔티티 관리(Entity Manager)
 
-- 엔티티 생성 방지(Block Entity Spawn)
+- 엔티티 생성 방지(Prevent Entity Spawn)
 - 엔티티 생성 방지(Show Entity Health)
 - 터치한 엔티티 즉사(Kill Touched Entity)
 - 터치한 엔티티 체력 표시(Show Touched Entity's Health)
@@ -150,7 +148,7 @@ This ModPE Script include malicious code.
 ### 지형 수정(Terrain)
 
 - 터치한 블록 정보(Touched Block Info.)
-- 배드락 캐기(Mining Bedrock)
+- 배드락 캐기(Mining Bed Rock)
 - setTile 메니저(setTile Manager)
 - 지점 1, 2 사이를 특정 블록으로 채움(인벤에디터의 블록설정) (Set Blocks)
 - 지점 1, 2 사이의 특정 블록을 또다른 특정 블록으로 채움(인벤에디터의 블록변경) (Replace Blocks)
@@ -216,152 +214,185 @@ This ModPE Script include malicious code.
 
 ### 서버 관련(Server Manager)
 
-- PVP 방지
-- 서버원 공중부양 방지
-- 표지판 TP
-- 명령어 단축키
-- 채팅 단축키
-- 연속 채팅 방지
-- 블록 설치 내열 기록
-- 서버원 접속 방지
-- 하이퍼 로그 기록
-- 서버장 사칭 방지
-- 서버 목록 숨기기
-- 블록 설치 방지
-- 블록 설치 내역
-- 대화 내용 보기
-- 채탕창 비우기
-- 채팅 조작
-- 채팅 무시
-- 하이퍼 로그 보기
-- 플레이어의 이동 금지
-- 내 ip 확인
+- PVP 방지(Prevent PVP)
+- 서버원 공중부양 방지(Prevent Client's Flying)
+- 명령어 단축키(Quick Cmd)
+- 채팅 단축키(Quick Chat)
+- 연속 채팅 방지(Prevent Rapid Chat)
+- 서버원 접속 방지(Prevent Accessing Client)
+- 하이퍼 로그 사용(Use Hyper Log)
+- The Seed
+- 서버장 사칭 방지(Prevent Admin Impersonate)
+- 서버 목록 숨기기(Hide Server List)
+- 대화 내용 보기(Chat Log)
+- 채팅 조작(Fake Chat)
+- 채팅 무시(Ignore Chat)
+- 하이퍼 로그 보기(Show Hyper Log)
+- 플레이어의 이동 금지(Block Player's Movement)
+- 내 ip 확인(Check My IP)
+- 포션 효과 방지(Prevent Potion Effects)
 
-### 테러 방지 옵션
+### Server Plugin
 
-- TNT 생성 방지
-- 폭발 삭제
-- PVE 방지
-- 모든 창고 잠금(0.11.1 이상에서 작동X)
-- 물 방지
-- 용암 방지
-- 불 방지
-- TNT 설치 방지
-- 거미줄 방지
-- 배드락 방지 - 투명 배드락 방지
-- 옵시디언 방지
-- 빛나는 옵시디언 방지
-- 광역 파괴 자동 추방
-- 테러 알림 on/off - 서버장 테러 허용 on/off
-- 블록 파괴 방지
-- 테러 기록 보기
-- 테러 기록 초기화
+- PVP 방지(Prevent PVP)
+- 표지판 TP(Sign TP)
+- 블록 설치 내역 기록(Record Block Log)
+- 블록 설치 방지(Prevent Set Block)
+- 플레이어 사망시 아이템 드롭 방지(Prevent Item Drop by Player's Dead)
+- 서버원 로그인 사용(Use Client Login)
+- 광산 사용(Use Mine)
+- 블록 설치 내역(Block Log)
+- 대화 내용 보기(Chat Log)
+- 채탕창 비우기(Clear Chat)
+- 서버원 접속 내역(Server Log)
+- 공지 띄우기(Use Notice)
+- 광산 설정(Mine Set)
 
-### 서버 테러
+### 테러 방지 옵션(Anti Terror Options)
 
-- TNT 설치
-- 구멍 생성
-- 폭발
-- 메테오
-- 불
-- 서버원 테러 포함 on/off
+- TNT 생성 방지(Prevent TNT Spawn)
+- 폭발 삭제(Remove Explosion)
+- PVE 방지(Prevent PVE)
+- 모든 창고 잠금(0.11.0 이상에서 작동X) (Lock All Chest(Do not word over 0.11.0))
+- 물 방지(Prevent Water)
+- 용암 방지(Prevent Lava)
+- 불 방지(Prevent Fire)
+- TNT 설치 방지(Prevent TNT)
+- 거미줄 방지(Prevent Web)
+- 배드락 방지(Prevent Bed Rock)
+- 투명 배드락 방지(Prevent Invisible Bed Rock)
+- 옵시디언 방지(Prevent Obsidian)
+- 빛나는 옵시디언 방지(Prevent Blowing Obsidian)
+- 광역 파괴 자동 추방(Auto Kick Wide Destroy)
+- 인첸트 자동 추방(Auto Kick Enchantment)
+- 포션 효과 방지(Prevent Potion Effects)
+- 도배 자동 추방(Auto Kick Rapid Chat)
+- 테러 알림 on/off(Terror Alert on/off)
+- 서버장 테러 허용 on/off(Allow Admin's Terror on/off)
+- 블록 파괴 방지(Prevent Block Destroy)
+- 테러 기록 보기(Terror Log)
+  - 테러 기록 초기화(Reset Terror Log)
+- 신고된 테러범 목록(Notify Terrorlist List)
+  -테러범 신고(Notify Terrorlist)
 
-### 기타 기능
+### 서버 테러(Server Terror)
 
-- 스크린샷 버튼
-- 플레이어 좌표
+- TNT 설치(Set TNTs)
+- 구멍 생성(Make Hole)
+- 폭발(Explosion)
+- 메테오(Meteor)
+- 불(Fire)
+- 서버원 테러 포함 on/off(Include clients on/off)
+
+### 테러 도우미(Terror Helper)
+- 라이터 지급(Give Flinter)
+- TNT 지급(Give TNT)
+- 물 양동이 지급(Give Water Bucket)
+- 용암 양동이 지급(Give Lava Bucket)
+- 거미줄 지급(Give Web)
+- 고급 테러(사용 불가) (Advanced Terror(Cannot Use))
+
+### 기타 기능(Else)
+
+- 스크린샷 버튼(Screen Shot Button)
+- 플레이어 좌표(Player Position)
 - X- Ray(광물 탐색 여부 선택 가능.)
-- 시계(실제시각)
-- 등불(주변 밝아짐)
-- 채우기(지점 1, 2 선택 후 원하는 블록으로 터치할 시 채워짐. 지형 수정과 월드 에딧과는 별계로 작동)
-- 터치한 블록 캐기(서바에서는 파괴, 크리에서는 제거)
-- 화면 뒤집기
-- 테드락 캐기 허용
-- 서버원 공중부양 방지
-- 마인크래프트 시계(시크바. 드래그 시 시간 변경됨.)
-- 시야 조절(시크바, 드래그로 조절 가능)
-- 광물 확인(터치한 블록 아래에 있는 광물 탐색)
-- 자동 횃불
-- 미니맵
-- 명령어 입력(Dark Cheater의 명령어들을 채팅창이 아닌 다른 곳에 칠 수 있음)
-- 웹뷰
-- 함수 실행
-- 음악 재생
-- 영상 재생
-- 화면 터치 방지
-- 지도 보기
-- 게임 속도 설정
-- 카디널 실행
-- 이벤트 함수 호출 시작
-- 고스트핵
-- 추가 기능 실행
-- 모드 변경
-- 게임 종료
+- 시계(실제시각) (Clock)
+- 등불(주변 밝아짐) (Torch)
+- 채우기(지점 1, 2 선택 후 원하는 블록으로 터치할 시 채워짐. 지형 수정과 월드 에딧과는 별계로 작동) (Filling)
+- 터치한 블록 캐기(서바에서는 파괴, 크리에서는 제거) (Destroy Touched Block)
+- 화면 뒤집기 (Reverse Screen)
+- 테드락 캐기 허용 (Allow Mining Bed Rock)
+- 마인크래프트 시계(시크바. 드래그 시 시간 변경됨.) (Minecraft Clock)
+- 시야 조절(시크바, 드래그로 조절 가능) (Fov Editor)
+- 광물 확인(터치한 블록 아래에 있는 광물 탐색) (Ore Search)
+- 자동 횃불(Auto Torch)
+- 미니맵(Mini Map)
+- 배터리 잔량 표시(Show Battery Level)
+  - 배터리 온도 확인(Check Battery Temperature)
+- 명령어 입력(Dark Cheater의 명령어들을 채팅창이 아닌 다른 곳에 칠 수 있음) (Input Commands)
+- 웹뷰(Web View)
+- 함수 실행(Run Func.)
+- 음악 재생(Play Music)
+- 영상 재생(Play Video)
+- 화면 터치 방지(Block Screen Touching)
+- 지도 보기(Show Map)
+- 게임 속도 설정(Set Game Speed)
+- 도배기(Rapid Chat)
+- 고스트핵(Ghost Hack)
+- 카디널 실행(Cardinal)
+- 도움말(Help)
+- 게임 종료(Quit to Title)
 
-### 추가 기능 (기타 기능의 일부)
+### 추가 기능(Plus)
 
-- 주기적으로 창고 확인
-- 엔더 반응기
+- 주기적으로 창고 확인(Check Chest Position Periodically)
+- 엔더 반응기(Ender Reactor)
 - Dark Cheater ESP
-- 블록 무한 설치
-- 크리에이티브처럼 블록 캐기
-- 추가한 스크립트 활성화
-- 커스텀 아이템(음식 포함) 추가
-- 텍스쳐명&텍스쳐 데미지 보기
-- items- opaque.png 파일 보기
-- 적용된 스크립트 수정
-- 가짜 크래시 띄우기
-- 건물 소환
-- 히로빈 소환
-- setTile 메니저
-- 파티클 도우미
-- 상위 능력자용 아이템 지급
-- 스크립트 추가
-- 설치된 어플 실행/삭제
-- 제작자 소환
+- 블록 무한 설치(Infinity Block)
+- 크리에이티브처럼 블록 캐기(Destroy Block as Creative)
+- 추가한 스크립트 활성화(Active Added Script)
+- 커스텀 아이템(음식 포함) 추가(Add Custom Item)
+- 텍스쳐명&텍스쳐 데미지 보기(See Textures)
+- items-opaque.png 파일 보기(Show items-opaque.png)
+- 적용된 스크립트 수정(Edit ModPE Scripts)
+- 가짜 크래시 띄우기(Fake Crash)
+- 건물 소환(Building Summon)
+- 히로빈 소환(Spawn Herobrine)
+- setTile 메니저(setTile Manager)
+- 파티클 도우미(Particle Helper)
+- 상위 능력자용 아이템 지급(Items for ESP-SB)
+- 스크립트 추가(Add Script)
+- 설치된 어플 실행/삭제(Run/Remove App)
+- 제작자 소환(Spawn Maker)
 
-### 환경 설정
+### 환경 설정(Settings)
 
-- 버튼 숨기기
-- 플레이어 목록 중복 방지
-- 플레이어 목록 가나다순으로 정렬
-- 설치된 어플 목록에서 패키지명도 표시
-- X- Ray에서 광물 탐색여부 on/off
-- 드래그로 버튼/위젯 위치 수정
-- 플레이어 관리에서 기능 사용 알림
-- 표지판 tp 사용 알림
-- modTick 강제 호출
-- 서버 접속시 버튼 재생성
-- 일부 테러 방지 기능 자동 활성화
-- 네이티브 센드책 부활
-- 테마 사용
-- 윈도우 10 GUI 사용
-- 메뉴에서 검은색 글자 사용
-- 웹 브라우저 설정
-  - 전체 화면
-  - 자바스크립트 허용
-  - 줌 인/아웃 활성화
-  - 폼 데이터 저장
-  - 비밀번호 저장
-  - 홈페이지 설정
-- UI 변경
-- 메뉴 위치(좌/우) 변경
-- 버튼 위치 변경
-- 위젯 위치 수정
-- 추가 파일 다운로드
-  - 스마트 무빙
-  - 고급 테러(다운 불가)
-  - 건물 소환
-  - 월드 에딧
+- 버튼 숨기기(Hide Button)
+- 플레이어 목록 중복 방지(Prevent Overlap In Player List)
+- 플레이어 목록 가나다순으로 정렬(Sort Player List)
+- 설치된 어플 목록에서 패키지명도 표시(Show Package name in app list)
+- X-Ray에서 광물 탐색여부 on/off(Scanning Ores in X-Ray on/off)
+- 드래그로 버튼/위젯 위치 수정(Edit Widget's Position With Drag)
+- 플레이어 관리에서 기능 사용 알림(Show alert when use functions in Player Manager)
+- 표지판 tp 사용 알림(Alert Sign TP's Usage)
+- modTick 강제 호출(Forced modTick)
+- 서버 접속시 버튼 재생성(Revive Button in the Server)
+- 일부 테러 방지 기능 자동 활성화(Auto On Some Anti-Terror Options)
+- 네이티브 센드챗 부활(Revive nativeSendChat)
+- 테마 사용(Use Theme)
+- 윈도우 10 GUI 사용(Use Window 10 UI)
+- 메뉴에서 검은색 글자 사용(Use Black Text)
+- 웹 브라우저 설정(Web View Set)
+  - 전체 화면(Full Screen)
+  - 자바스크립트 허용(Enable Javascript)
+  - 줌 인/아웃 활성화(Enable Zoom-In)
+  - 폼 데이터 저장(Save Form Data)
+  - 비밀번호 저장(Save Password)
+  - 홈페이지 설정(Set Hompage)
+- UI 변경(Set UI)
+- 메뉴 위치(좌/우) 변경(Set Menu's Position)
+- 버튼 위치 변경(Set Button's Position)
+- 위젯 위치 수정(Set Widget's Position)
+- 추가 파일 다운로드(Download Plus File)
+  - 스마트 무빙(Smark Moving)
+  - 고급 테러(다운 불가) (Advanced Terror(Cannot Download))
+  - 건물 소환(Summon Building)
+  - 월드 에딧(World Edit)
   - Dark Cheater ESP
-  - setTile 메니저
-  - 파티클 도우미
-  - 고스트핵
-- 채탕칭 도배문구 설정
-- 지도 범위 설정
-- 엔티티 스폰 방지 설정
-- 메뉴 색상 설정
-- 이용 약관 보기
-- 다크 치터 테마 관리
-- 회원 가입
+  - setTile 메니저(setTile Manager)
+  - 파티클 도우미(Particle Manager)
+  - 고스트핵(Ghost Hack)
+- 채탕칭 도배문구 설정(Set Rapid Chat)
+- 지도 범위 설정(Set Map's Scope)
+- 엔티티 스폰 방지 설정(Prevent Entity Spawn Settings)
+- 메뉴 색상 설정(Set Menu's Color)
+- 이용 약관 보기(Show Terms)
+- 다크 치터 테마 관리(Theme Manager)
+- 디바이스 정보(Device Info.)
+- 서버에서 버튼 유지(Keep Button in Server)
+- Nusty 설정(Nusty Settings)
+- 공지 사항 게시판(Notice Board)
+- DCMS Settings
+- 회원 가입(Register)
 
