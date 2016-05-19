@@ -1,4 +1,4 @@
-﻿/*
+/*
 DCMS Compiler
 version 1.0
 © 2016 Dark Tornado, All rights reserved.
