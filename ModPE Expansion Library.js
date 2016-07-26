@@ -1,5 +1,5 @@
-﻿ModPE Expansion Library
-version : 1.0
+ModPE Expansion Library
+version : 1.1
 Maker : Dark Tornado
 © 2016 Dark Tornado, All rights reserved.
 --------------------
