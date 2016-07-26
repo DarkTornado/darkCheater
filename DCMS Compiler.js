@@ -1,6 +1,6 @@
 /*
 DCMS Compiler
-version 1.0
+version 1.1
 © 2016 Dark Tornado, All rights reserved.
 */
 
@@ -13,7 +13,6 @@ var eval2 = eval;
 var libList = new java.io.File(sdcard+"/Android/data/com.darktornado.darkcheater/dcms/library/").list().sort();
 for(var n=0;n<libList.length;n++){
 var cache = DCMS.loadLibrary(libList[n].substring(0, libList[n].lastIndexOf("."))).split("\n--------------------\n");
-clientMessage(cache[0]);
 eval2(cache[1]+"");
 }
 var arr1 = DCMS.getDcmsList();
