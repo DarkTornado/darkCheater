@@ -1,5 +1,5 @@
-﻿DCMS Basic Library
-version : 1.0
+DCMS Basic Library
+version : 1.1
 Maker : Dark Tornado
 © 2016 Dark Tornado, All rights reserved.
 --------------------
@@ -20,7 +20,6 @@ toast.show();
 }));
 }
 
-
 function openUrl(url){
 try{
 var uri = new android.net.Uri.parse(url);
@@ -31,7 +30,6 @@ catch(e){
 Dark.showDialog("Error from DCMS Library", e);
 }
 }
-
 
 function showDialog(title, msg){
 ctx.runOnUiThread(new java.lang.Runnable({
@@ -50,7 +48,6 @@ Dark.showDialog("Error from DCMS Library", e);
 }));
 }
 
-
 function getRealTime(tf){
 try{
 var day = new Date();
@@ -61,7 +58,6 @@ catch(e){
 Dark.showDialog("Error from DCMS Library", e);
 }
 }
-
 
 function getBatteryLevel(){
 try{
@@ -75,5 +71,4 @@ catch(e){
 Dark.showDialog("Error from DCMS Library", e);
 }
 }
-
 
