@@ -4,3 +4,4 @@ Siin
 Sdde - 비속어, 패드립, 공중부양
 lololl - TNT
 choin - 일반 포트포워딩 서버를 TNT, 라이터, 물, 용암 등으로 테러를 함.
+pandaking - 확성기로 비속어 사용 및 패드립.
