@@ -30,6 +30,7 @@ This ModPE Script include malicious code.
   - PC 아이템 아이디(Item Id List in MCPC)
 - 갑옷 지급(Give Armor)
 - 포션 조합법 보기(Potion Recipe)
+  - 포션 지급(Give Potion)
 
 ### 갑옷 슬롯 수정(Armor Slot)
 
@@ -51,6 +52,7 @@ This ModPE Script include malicious code.
 
 - 월드이름, 맵 폴더이름 보기(Show World's name and folder name)
 - 시간 고정(Time Lock)
+- 터치한 표지판 내용 수정(Edit Touched Sign's Text)
 - 시간 설정(Time Set)
 - 게임모드 변경(Change Game Mode)
 - 체력 설정(Set Health)
@@ -60,6 +62,7 @@ This ModPE Script include malicious code.
 - 주변 창고 내용 수정(Edit Surround Chests) (0.12.1 이상에서 작동 X, Do not work over 0.12.1)
 - 다른 월드로 이동(Go to Another Map)
 - 레벨/경험치 설정(Set Lv./Exp.)
+- 스폰 지점 설정(Set Spawn)
 
 ### 플레이어 관리(Player Manager)
 
@@ -78,9 +81,11 @@ This ModPE Script include malicious code.
 - 위치 확인(Check Position)
 - 플레이어의 시야 보기(See View)
 - 칭호 부여(Give Title)
-- 칭호 회수(Remove Title)
+  - 칭호 회수(Remove Title)
 - 최대 체력 설정(Set Max Health)
 - 갑옷 슬롯 보기(See Armor Slot)
+- 메시지 전송(Send Message)
+- 불붙이기(Set Fire Ticks)
 - OP 권한 부여/회수(Give OP/Remove OP)
   - .day
   - .night
@@ -150,6 +155,7 @@ This ModPE Script include malicious code.
 - 터치한 블록 정보(Touched Block Info.)
 - 배드락 캐기(Mining Bed Rock)
 - setTile 메니저(setTile Manager)
+- 월드 에딧 지점 입력 버튼(Button for input World Edit's Point)
 - 지점 1, 2 사이를 특정 블록으로 채움(인벤에디터의 블록설정) (Set Blocks)
 - 지점 1, 2 사이의 특정 블록을 또다른 특정 블록으로 채움(인벤에디터의 블록변경) (Replace Blocks)
 - 월드에딧(철칼&철굉이로 하는 것. 지형 수정과는 별계로 작동) (World Edit)
@@ -224,6 +230,8 @@ This ModPE Script include malicious code.
 - The Seed
 - 서버장 사칭 방지(Prevent Admin Impersonate)
 - 서버 목록 숨기기(Hide Server List)
+- 이름표 숨기기(Hide Name Tag)
+- 이름표 옆에 채팅 표시(Show Chat at Name Tag)
 - 대화 내용 보기(Chat Log)
 - 채팅 조작(Fake Chat)
 - 채팅 무시(Ignore Chat)
@@ -272,7 +280,7 @@ This ModPE Script include malicious code.
 - 블록 파괴 방지(Prevent Block Destroy)
 - 테러 기록 보기(Terror Log)
   - 테러 기록 초기화(Reset Terror Log)
-- 신고된 테러범 목록(Notify Terrorlist List)
+- 신고된 테러범 목록(Notified Terrorlist List)
   -테러범 신고(Notify Terrorlist)
 
 ### 서버 테러(Server Terror)
@@ -310,6 +318,8 @@ This ModPE Script include malicious code.
 - 미니맵(Mini Map)
 - 배터리 잔량 표시(Show Battery Level)
   - 배터리 온도 확인(Check Battery Temperature)
+- 최대 체력 오류 픽스(Fix Max Health Error)
+- 내 이름표 숨기기(Hide My Name Tag)
 - 명령어 입력(Dark Cheater의 명령어들을 채팅창이 아닌 다른 곳에 칠 수 있음) (Input Commands)
 - 웹뷰(Web View)
 - 함수 실행(Run Func.)
@@ -321,7 +331,7 @@ This ModPE Script include malicious code.
 - 도배기(Rapid Chat)
 - 고스트핵(Ghost Hack)
 - 카디널 실행(Cardinal)
-- 도움말(Help)
+- 스크립트 정보(Script Info)
 - 게임 종료(Quit to Title)
 
 ### 추가 기능(Plus)
@@ -331,7 +341,7 @@ This ModPE Script include malicious code.
 - Dark Cheater ESP
 - 블록 무한 설치(Infinity Block)
 - 크리에이티브처럼 블록 캐기(Destroy Block as Creative)
-- 추가한 스크립트 활성화(Active Added Script)
+- Fire Editor
 - 커스텀 아이템(음식 포함) 추가(Add Custom Item)
 - 텍스쳐명&텍스쳐 데미지 보기(See Textures)
 - items-opaque.png 파일 보기(Show items-opaque.png)
@@ -341,10 +351,10 @@ This ModPE Script include malicious code.
 - 히로빈 소환(Spawn Herobrine)
 - setTile 메니저(setTile Manager)
 - 파티클 도우미(Particle Helper)
-- 상위 능력자용 아이템 지급(Items for ESP-SB)
-- 스크립트 추가(Add Script)
+- 상위 능력자용 아이템 지급(Give Items for ESP-SB)
 - 설치된 어플 실행/삭제(Run/Remove App)
 - 제작자 소환(Spawn Maker)
+- 오버라이드된 파일 삭제(Remove Overrided Files)
 
 ### 환경 설정(Settings)
 
@@ -363,6 +373,9 @@ This ModPE Script include malicious code.
 - 테마 사용(Use Theme)
 - 윈도우 10 GUI 사용(Use Window 10 UI)
 - 메뉴에서 검은색 글자 사용(Use Black Text)
+- 이벤트 리스너로 서버원 감지(Notice Clients with Event Listener)
+- 키보트 전체화면 off(Keyboard Fullscreen off)
+- Dark Effect 사용(Use Dark Effect)
 - 웹 브라우저 설정(Web View Set)
   - 전체 화면(Full Screen)
   - 자바스크립트 허용(Enable Javascript)
@@ -383,6 +396,8 @@ This ModPE Script include malicious code.
   - setTile 메니저(setTile Manager)
   - 파티클 도우미(Particle Manager)
   - 고스트핵(Ghost Hack)
+  - Fire Editor
+  - Server Plugin
 - 채탕칭 도배문구 설정(Set Rapid Chat)
 - 지도 범위 설정(Set Map's Scope)
 - 엔티티 스폰 방지 설정(Prevent Entity Spawn Settings)
@@ -392,6 +407,7 @@ This ModPE Script include malicious code.
 - 디바이스 정보(Device Info.)
 - 서버에서 버튼 유지(Keep Button in Server)
 - Nusty 설정(Nusty Settings)
+- Library Manager
 - 공지 사항 게시판(Notice Board)
 - DCMS Settings
 - 회원 가입(Register)
