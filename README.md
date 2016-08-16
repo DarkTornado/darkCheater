@@ -20,25 +20,25 @@ This ModPE Script include malicious code.
 - 인벤토리 세이브(Inventory Save)
 - 아이템 지급/들고 있는 아이템으로 설정(Add Item/Set Carried Item)
 - 아이템 목록(Item List)
-  - 아이템 검색(Item Search)
+  - 아이템 검색(Item Search) (길게 눌러서 실행(Long Touch for Use))
 - 인벤토리 리셋(Reset Inv.)
 - 들고 있는 아이템 삭제(Remove Carried Item)
 - 인첸트(Enchantment)
-  - 인첸트 해제(Remove Enchantment)
+  - 인첸트 해제(Remove Enchantment) (길게 눌러서 실행(Long Touch for Use))
 - 아이템 이름 변경(Change Item's Name)
 - 아이템 아이디(Item Id List)
   - PC 아이템 아이디(Item Id List in MCPC)
 - 갑옷 지급(Give Armor)
 - 포션 조합법 보기(Potion Recipe)
-  - 포션 지급(Give Potion)
+  - 포션 지급(Give Potion) (길게 눌러서 실행(Long Touch for Use))
 
-### 갑옷 슬롯 수정(Armor Slot)
+### 갑옷 슬롯 수정(Armor Slot) (길게 눌러서 실행(Long Touch for Use))
 
 - 갑옷 내용 수정(Edit Armor Slot)
 - 모든 갑옷의 내구도 수리(Fix All Armors)
 - 갑옷 바로 입기(Wear Armor Sat)
 
-### 다크 포인트(Dark Point)
+### 다크 포인트(Dark Point) (더블 터치로 실행(Double Touch for Use))
 
 - 화면에 다크 포인트 표시(Show Dark Point)
 - 다크 스킬(Dark Skill)
@@ -56,7 +56,7 @@ This ModPE Script include malicious code.
 - 시간 설정(Time Set)
 - 게임모드 변경(Change Game Mode)
 - 체력 설정(Set Health)
-  - 허기 설정(Set Hunger)
+  - 허기 설정(Set Hunger) (길게 눌러서 실행(Long Touch for Use))
 - 플레이어 이동(Move Player)
 - 날씨 설정(Weather Set)
 - 주변 창고 내용 수정(Edit Surround Chests) (0.12.1 이상에서 작동 X, Do not work over 0.12.1)
@@ -76,17 +76,17 @@ This ModPE Script include malicious code.
 - 전원 사살(Kill All)
 - 전원 사살(Summon All)
 - 포션 효과 부여(Give Potion Effects)
-  - 포션 효과 삭제(Remove Potion Effects)
+  - 포션 효과 삭제(Remove Potion Effects) (길게 눌러서 실행(Long Touch for Use))
 - 조지기(Give a Fxxk)
 - 위치 확인(Check Position)
 - 플레이어의 시야 보기(See View)
 - 칭호 부여(Give Title)
-  - 칭호 회수(Remove Title)
+  - 칭호 회수(Remove Title) (길게 눌러서 실행(Long Touch for Use))
 - 최대 체력 설정(Set Max Health)
 - 갑옷 슬롯 보기(See Armor Slot)
 - 메시지 전송(Send Message)
 - 불붙이기(Set Fire Ticks)
-- OP 권한 부여/회수(Give OP/Remove OP)
+- OP 권한 부여/회수(Give OP/Remove OP) (길게 눌러서 세부 설정(Long Touch for Detail Settings))
   - .day
   - .night
   - .tp
@@ -99,7 +99,7 @@ This ModPE Script include malicious code.
   - .heal
   - .kick(OP가 서버장에게 사용 불가/OP cannot use this command to Admin)
 
-### 플레이어들 관리(Players Manager)
+### 플레이어들 관리(Players Manager) (길게 눌러서 실행(Long Touch for Use))
 
 - 체력 설정(Set Health)
 - 소환(Summon)
@@ -110,13 +110,13 @@ This ModPE Script include malicious code.
 - 전원 사살(Kill All)
 - 전원 사살(Summon All)
 - 포션 효과 부여(Give Potion Effects)
-  - 포션 효과 삭제(Remove Potion Effects)
+  - 포션 효과 삭제(Remove Potion Effects) (길게 눌러서 실행(Long Touch for Use))
 - 조지기(Give a Fxxk)
 - 칭호 부여(Give Title)
 - 칭호 회수(Remove Title)
 - 최대 체력 설정(Set Max Health)
 
-### 밴 목록(Ban Menu)
+### 밴 목록(Ban Menu) (더블 터치로 실행(Double Touch for Use))
 
 - 플레이어 밴(Ban Player)
 - 밴 목록 초기화(Reset Ban List)
@@ -132,7 +132,7 @@ This ModPE Script include malicious code.
 - 터치한 엔티티 즉사(Kill Touched Entity)
 - 터치한 엔티티 체력 표시(Show Touched Entity's Health)
 - 엔티티 스폰(Spwan Entity)
-  - 목록에 없는 엔티티 스폰(Spawn Entity not exists in Entity List)
+  - 목록에 없는 엔티티 스폰(Spawn Entity not exists in Entity List) (길게 눌러서 실행(Long Touch for Use))
 - 엔티티 삭제(Remove Entities)
 - 모든 엔티티 삭제(Remove All Entities)
 - 엔티티 탑승(Ride Entity)
@@ -141,7 +141,7 @@ This ModPE Script include malicious code.
 - 모든 엔티티들의 이름표 제거(Remove All Entites' Name Tag)
 - 몹 배틀(Mob Battle)
 
-### 주변 엔티티 관리(Surround Entity Manager)
+### 주변 엔티티 관리(Surround Entity Manager) (길게 눌러서 실행(Long Touch for Use))
 
 - 엔티티 추적(Entity GPS)
 - 불붙이기(Set Fire Ticks)
@@ -240,7 +240,7 @@ This ModPE Script include malicious code.
 - 내 ip 확인(Check My IP)
 - 포션 효과 방지(Prevent Potion Effects)
 
-### Server Plugin
+### Server Plugin (길게 눌러서 실행(Long Touch for Use))
 
 - PVP 방지(Prevent PVP)
 - 표지판 TP(Sign TP)
@@ -281,9 +281,9 @@ This ModPE Script include malicious code.
 - 테러 기록 보기(Terror Log)
   - 테러 기록 초기화(Reset Terror Log)
 - 신고된 테러범 목록(Notified Terrorlist List)
-  -테러범 신고(Notify Terrorlist)
+  - 테러범 신고(Notify Terrorlist) (길게 눌러서 실행(Long Touch for Use))
 
-### 서버 테러(Server Terror)
+### 서버 테러(Server Terror) (길게 눌러서 실행(Long Touch for Use))
 
 - TNT 설치(Set TNTs)
 - 구멍 생성(Make Hole)
@@ -292,7 +292,7 @@ This ModPE Script include malicious code.
 - 불(Fire)
 - 서버원 테러 포함 on/off(Include clients on/off)
 
-### 테러 도우미(Terror Helper)
+### 테러 도우미(Terror Helper) (더블 터치로 실행(Double Touch for Use))
 - 라이터 지급(Give Flinter)
 - TNT 지급(Give TNT)
 - 물 양동이 지급(Give Water Bucket)
@@ -334,7 +334,7 @@ This ModPE Script include malicious code.
 - 스크립트 정보(Script Info)
 - 게임 종료(Quit to Title)
 
-### 추가 기능(Plus)
+### 추가 기능(Plus) (길게 눌러서 실행(Long Touch for Use))
 
 - 주기적으로 창고 확인(Check Chest Position Periodically)
 - 엔더 반응기(Ender Reactor)
