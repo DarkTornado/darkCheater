@@ -78,6 +78,7 @@ This ModPE Script include malicious code.
 - 포션 효과 부여(Give Potion Effects)
   - 포션 효과 삭제(Remove Potion Effects) (길게 눌러서 실행(Long Touch for Use))
 - 조지기(Give a Fxxk)
+- Client Id 보기(See Client ID)
 - 위치 확인(Check Position)
 - 플레이어의 시야 보기(See View)
 - 칭호 부여(Give Title)
@@ -85,7 +86,7 @@ This ModPE Script include malicious code.
 - 최대 체력 설정(Set Max Health)
 - 갑옷 슬롯 보기(See Armor Slot)
 - 메시지 전송(Send Message)
-- 불붙이기(Set Fire Ticks)
+- 불붙이기(Burn)
 - OP 권한 부여/회수(Give OP/Remove OP) (길게 눌러서 세부 설정(Long Touch for Detail Settings))
   - .day
   - .night
