@@ -328,6 +328,7 @@ This ModPE Script include malicious code.
 - 화면 터치 방지 (Block Screen Touching)
 - 지도 보기 (Show Map)
 - 게임 속도 설정 (Set Game Speed)
+- 기능 검색 (Search Functions)
 - 도배기 (Rapid Chat)
 - 고스트핵 (Ghost Hack)
 - 카디널 실행 (Cardinal)
