@@ -13,21 +13,21 @@ wWin.addToggleText("터치한 블록 정보", "blockInfo = true;", "blockInfo = 
 wWin.addText("채우기", "inputBlockId(3);");
 wWin.addText("바꾸기", "replaceDialog(true);");
 wWin.addText("빼고 바꾸기", "unreplaceDialog();");
-wWin.addText("복사", function({
+wWin.addText("복사", function(){
 new java.lang.Thread({
 run : function(){
 procCmd("copy");
 }
 }).start();
 });
-wWin.addText("붙여넣기", function({
+wWin.addText("붙여넣기", function(){
 new java.lang.Thread({
 run : function(){
 procCmd("paste");
 }
 }).start();
 });
-wWin.addText("붙여넣기 취소", function({
+wWin.addText("붙여넣기 취소", function(){
 if(w.back){
 new java.lang.Thread({
 run : function(){
