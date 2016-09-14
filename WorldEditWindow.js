@@ -1,6 +1,7 @@
 ﻿try{
-wWin = new DarkFloatingWindow();
+wWin = new FloatingWindow();
 wWin.setTitle("월드 에딧");
+wWin.setTitleColor(android.graphics.Color.CYAN);
 wWin.addText("철칼&철괭이", function(){
 addItemInventory(267, 1, 0);
 addItemInventory(292, 1, 0);
@@ -54,6 +55,7 @@ wWin.addText("눈내리기", "procCmd('snow');");
 wWin.addText("얼리기", "procCmd('freeze');");
 wWin.addText("나무 삭제", "procCmd('no tree');");
 wWin.addText("물 삭제", "procCmd('no water');");
+wWin.setColor(android.graphics.Color.argb(110, 75, 70, 80));
 wWin.show();
 }
 catch(e){
