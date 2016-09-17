@@ -137,9 +137,10 @@ This ModPE Script include malicious code.
 - 모든 엔티티 삭제 (Remove All Entities)
 - 엔티티 탑승 (Ride Entity)
 - 엔티티 이름 짓기 (Name Entity)
+  - 모든 엔티티들의 이름표 제거(길게 눌러서 실행) (Remove All Entites' Name Tag(Long Touch for Use))
 - 엔티티 코드 확인 (Check Entity Type Id)
-- 모든 엔티티들의 이름표 제거(길게 눌러서 실행) (Remove All Entites' Name Tag)
 - 몹 배틀 (Mob Battle)
+- 엔티티 스폰 방지 설정 (Prevent Entity Spawn Settings)
 
 ### 주변 엔티티 관리(길게 눌러서 실행) (Surround Entity Manager(Long Touch for Use))
 
@@ -154,7 +155,6 @@ This ModPE Script include malicious code.
 
 - 터치한 블록 정보 (Touched Block Info.)
 - 배드락 캐기 (Mining Bed Rock)
-- setTile 메니저 (setTile Manager)
 - 월드 에딧 지점 입력 버튼 (Button for input World Edit's Point)
 - 지점 1, 2 사이를 특정 블록으로 채움 (인벤에디터의 블록설정) (Set Blocks)
 - 지점 1, 2 사이의 특정 블록을 또다른 특정 블록으로 채움 (인벤에디터의 블록변경) (Replace Blocks)
@@ -188,8 +188,9 @@ This ModPE Script include malicious code.
     - x축 대칭 (Symmetry X Axis)
     - y축 대칭 (Symmetry Y Axis)
     - z축 대칭 (Symmetry Z Axis)
-- 서버원용 월드에딧 (멀티 지원 월드에딧. 지형수정과 월드에딧과는 별계로 작동.) (World Edit for Clients)
-- 서버원용 월드에딧 GUI (별도의 스크립트 필요) (World Edit for Clients' GUI)
+  - 월드에딧 윈도우 (World Edit Window)
+  - setTile 메니저 (setTile Manager)
+- 서버원용 월드에딧(길게 눌러서 실행) (멀티 지원 월드에딧. 지형수정과 월드에딧과는 별계로 작동.) (World Edit for Clients(Long Touch for Use))
 
 ### 이동 계열 (Movement)
 
@@ -209,7 +210,7 @@ This ModPE Script include malicious code.
 - 좌표 기억/이동 (Remember Position/Move)
 - 바라보는 곳으로 순간이동 (Go to Looking Point)
 
-### D.L. Skill (ESP)
+### D.L. Skill(길게 눌러서 실행) (Long Touch for Use)
 
 - 능력 원격 on/off (Remove ESP on/off)
 - 자동수복&자동삭제 on/off (Auto Recovery/Auto Remove on/off)
@@ -240,7 +241,7 @@ This ModPE Script include malicious code.
 - 내 ip 확인 (Check My IP)
 - 포션 효과 방지 (Prevent Potion Effects)
 
-### Server Plugin(길게 눌러서 실행) (길게 눌러서 실행(Long Touch for Use))
+### Server Plugin(길게 눌러서 실행) (Long Touch for Use)
 
 - PVP 방지 (Prevent PVP)
 - 표지판 TP (Sign TP)
@@ -298,6 +299,7 @@ This ModPE Script include malicious code.
 - 물 양동이 지급 (Give Water Bucket)
 - 용암 양동이 지급 (Give Lava Bucket)
 - 거미줄 지급 (Give Web)
+- 베트락 지급 (Give Bedrock)
 - 고급 테러 (사용 불가) (Advanced Terror (Cannot Use))
 
 ### 기타 기능 (Else)
@@ -343,15 +345,15 @@ This ModPE Script include malicious code.
 - 블록 무한 설치 (Infinity Block)
 - 크리에이티브처럼 블록 캐기 (Destroy Block as Creative)
 - Fire Editor
-- 커스텀 아이템/음식 추가 (Add Custom Item)
-- 텍스쳐명&텍스쳐 데미지 보기 (See Textures)
-- items-opaque.png 파일 보기 (Show items-opaque.png)
+- SD 카드 초기화 1차 방어 (Prevent SD Card Reset(Primary Defense))
+- 커스텀 아이템 추가 (Add Custom Item)
 - 적용된 스크립트 수정 (Edit ModPE Scripts)
+- 적용된 모드 목록 보기 (See PTP Mod List)
 - 가짜 크래시 띄우기 (Fake Crash)
 - 건물 소환 (Building Summon)
 - 히로빈 소환 (Spawn Herobrine)
 - setTile 메니저 (setTile Manager)
-- 파티클 도우미 (Particle Helper)
+  - 파티클 도우미(길게 눌러서 실행) (Particle Helper(Long Touch for Use))
 - 상위 능력자용 아이템 지급 (Give Items for ESP-SB)
 - 설치된 어플 실행/삭제 (Run/Remove App)
 - 제작자 소환 (Spawn Maker)
@@ -401,7 +403,6 @@ This ModPE Script include malicious code.
   - Server Plugin
 - 채탕칭 도배문구 설정 (Set Rapid Chat)
 - 지도 범위 설정 (Set Map's Scope)
-- 엔티티 스폰 방지 설정 (Prevent Entity Spawn Settings)
 - 메뉴 색상 설정 (Set Menu's Color)
 - 이용 약관 보기 (Show Terms)
 - 다크 치터 테마 관리 (Theme Manager)
@@ -412,5 +413,4 @@ This ModPE Script include malicious code.
 - 공지 사항 게시판 (Notice Board)
 - DCMS 설정 (DCMS Settings)
 - 회원 가입 (Register)
-
 
