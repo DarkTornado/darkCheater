@@ -1,5 +1,6 @@
 /*
 Dark Cheater Addon - Virtual Inventory
+version 1.1
 © 2016 Dark Tornado, All rights reserved.
 Dark Cheater의 애드온(?)입니다.
 다크 치터 2.4.0 이상의 버전과 자동 연동.
@@ -403,7 +404,9 @@ dialog.setTitle("수량 입력");
 dialog.setNegativeButton("취소", null);
 dialog.setPositiveButton("확인", new android.content.DialogInterface.OnClickListener({
 onClick: function(v){
-VirInv.edit(Number(txt.getText()), type, slotId, txts);
+var count = Number(txt.getText());
+if(txt.getText().toString()=="") count = 1;
+VirInv.edit(count, type, slotId, txts);
 }
 }));
 dialog.show();
