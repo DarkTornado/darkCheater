@@ -2,3 +2,4 @@ Client World Edit Plus
 The Seed
 Virtual Inventory
 Terror Supporter
+Hyper Movement
