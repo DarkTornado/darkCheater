@@ -170,6 +170,9 @@ print(e);
 }
 }
 }));
+},
+isForDarkCheater : function(){
+return true;
 }
 };
 
