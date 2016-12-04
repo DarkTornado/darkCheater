@@ -37,16 +37,6 @@ This ModPE Script include malicious code.
 - 모든 갑옷의 내구도 수리 (Fix All Armors)
 - 갑옷 바로 입기 (Wear Armor Sat)
 
-### 다크 포인트(더블 터치로 실행) (Dark Point(Double Touch for Use))
-
-- 화면에 다크 포인트 표시 (Show Dark Point)
-- 다크 스킬 (Dark Skill)
-- 다크 인첸트 (Dark Enchant)
-- 모든 인첸트 해제 (Remove All Enchantments)
-- Dark Tornado's Book 지급 (Give Dark Tornado's Book)
-- 다크 포인트 설정 (Dark Point Settings)
-- 다크 포인트 도움말 (Help)
-
 ### 월드 정보 수정 (World Info)
 
 - 월드이름, 맵 폴더이름 보기 (Show World's name and folder name)
