@@ -18,8 +18,7 @@ This ModPE Script include malicious code.
 - 터치한 창고 내용 수정 (Edit Touched Chest)
 - 인벤토리 세이브 (Inventory Save)
 - 아이템 지급/들고 있는 아이템으로 설정 (Add Item/Set Carried Item)
-- 아이템 목록 (Item List)
-  - 아이템 검색(길게 눌러서 실행) (Item Search(Long Touch for Use))
+- 아이템 목록/검색 (Item List/Search)
 - 인벤토리 리셋 (Reset Inv.)
 - 들고 있는 아이템 삭제 (Remove Carried Item)
 - 인첸트 (Enchantment)
@@ -30,6 +29,7 @@ This ModPE Script include malicious code.
 - 갑옷 지급 (Give Armor)
 - 포션 조합법 보기 (Potion Recipe)
   - 포션 지급(길게 눌러서 실행) (Give Potion(Long Touch for Use))
+- 가상 인벤토리 (Virtual Inv.)
 
 ### 갑옷 슬롯 수정(길게 눌러서 실행) (Armor Slot(Long Touch for Use))
 
@@ -62,6 +62,8 @@ This ModPE Script include malicious code.
 - 다른 월드로 이동 (Go to Another Map)
 - 레벨/경험치 설정 (Set Lv./Exp.)
 - 스폰 지점 설정 (Set Spawn)
+- NPC 마을 생성 (Generate NPC Village)
+- 맵 백업 (Map Back Up)
 
 ### 플레이어 관리 (Player Manager)
 
@@ -86,6 +88,7 @@ This ModPE Script include malicious code.
 - 갑옷 슬롯 보기 (See Armor Slot)
 - 메시지 전송 (Send Message)
 - 불붙이기 (Burn)
+- 경험치 지급 (Give Exp.)
 - OP 권한 부여/회수(길게 눌러서 세부 설정) (Give OP/Remove OP(Long Touch for Detail Settings))
   - .day
   - .night
@@ -154,7 +157,7 @@ This ModPE Script include malicious code.
 ### 지형 수정 (Terrain)
 
 - 터치한 블록 정보 (Touched Block Info.)
-- 배드락 캐기 (Mining Bed Rock)
+- setTile 매니저 (setTile Manager)
 - 월드 에딧 지점 입력 버튼 (Button for input World Edit's Point)
 - 지점 1, 2 사이를 특정 블록으로 채움 (인벤에디터의 블록설정) (Set Blocks)
 - 지점 1, 2 사이의 특정 블록을 또다른 특정 블록으로 채움 (인벤에디터의 블록변경) (Replace Blocks)
@@ -189,7 +192,6 @@ This ModPE Script include malicious code.
     - y축 대칭 (Symmetry Y Axis)
     - z축 대칭 (Symmetry Z Axis)
   - 월드에딧 윈도우 (World Edit Window)
-  - setTile 메니저 (setTile Manager)
 - 서버원용 월드에딧(길게 눌러서 실행) (멀티 지원 월드에딧. 지형수정과 월드에딧과는 별계로 작동.) (World Edit for Clients(Long Touch for Use))
 
 ### 이동 계열 (Movement)
@@ -209,6 +211,7 @@ This ModPE Script include malicious code.
 - 터치한 곳으로 순간이동/순보/포물선 점프 (TP/Dash/Flash Jump)
 - 좌표 기억/이동 (Remember Position/Move)
 - 바라보는 곳으로 순간이동 (Go to Looking Point)
+- 하이퍼 부브먼트 (Hyper Movement)
 
 ### D.L. Skill(길게 눌러서 실행) (Long Touch for Use)
 
@@ -276,6 +279,8 @@ This ModPE Script include malicious code.
 - 인첸트 자동 추방 (Auto Kick Enchantment)
 - 포션 효과 방지 (Prevent Potion Effects)
 - 도배 자동 추방 (Auto Kick Rapid Chat)
+- 발사기 방지 (Prevent Dispenser)
+- 위더 스폰 방지 (Prevent Wither Spawnning)
 - 테러 알림 on/off (Terror Alert on/off)
 - 서버장 테러 허용 on/off (Allow Admin's Terror on/off)
 - 블록 파괴 방지 (Prevent Block Destroy)
@@ -354,7 +359,7 @@ This ModPE Script include malicious code.
 - 히로빈 소환 (Spawn Herobrine)
 - setTile 메니저 (setTile Manager)
   - 파티클 도우미(길게 눌러서 실행) (Particle Helper(Long Touch for Use))
-- 상위 능력자용 아이템 지급 (Give Items for ESP-SB)
+- ESP-SB 아이템 지급 (Give Items for ESP-SB)
 - 설치된 어플 실행/삭제 (Run/Remove App)
 - 제작자 소환 (Spawn Maker)
 - 오버라이드된 파일 삭제 (Remove Overrided Files)
@@ -379,6 +384,8 @@ This ModPE Script include malicious code.
 - 이벤트 리스너로 서버원 감지 (Notice Clients with Event Listener)
 - 키보트 전체화면 off (Keyboard Fullscreen off)
 - Dark Effect 사용 (Use Dark Effect)
+- showTipMessage 픽스 (Fix ModPE.showTipMessage)
+- 새로운 디자인 사용 (Use New Design)
 - 웹 브라우저 설정 (Web View Set)
   - 전체 화면 (Full Screen)
   - 자바스크립트 허용 (Enable Javascript)
@@ -409,8 +416,7 @@ This ModPE Script include malicious code.
 - 디바이스 정보 (Device Info.)
 - 서버에서 버튼 유지 (Keep Button in Server)
 - Nusty 설정 (Nusty Settings)
-- Library Manager (Library Manager)
 - 공지 사항 게시판 (Notice Board)
 - DCMS 설정 (DCMS Settings)
 - 회원 가입 (Register)
-
+- 딥 다크 치터 (Deep Dark Cheater)
