@@ -6,12 +6,10 @@ var title = makeTitle("Server Plugin");
 var layout = new android.widget.LinearLayout(ctx);
 layout.setOrientation(1);
 var menusT = ["PVP 방지", "표지판 TP", "블록 설치 내역 기록", "블록 설치 방지", "플레이어 사망시 아이템 드롭 방지", "서버원 로그인 사용", "광산 사용"];
-var btnT = new Array();
+var btnT = [];
 for(var n in menusT){
-btnT[n] = new android.widget.ToggleButton(ctx);
-btnT[n].setTextOn(menusT[n]);
-btnT[n].setTextOff(menusT[n]);
-btnT[n].setTextColor(white);
+btnT[n] = new DarkToggleButton(ctx);
+btnT[n].setText(menusT[n]);
 }
 btnT[0].setChecked(noPvp);
 btnT[1].setChecked(signTp);
@@ -20,43 +18,43 @@ btnT[3].setChecked(antiBlock);
 btnT[4].setChecked(deathAntiLack);
 btnT[5].setChecked(useLogin);
 btnT[6].setChecked(useMine);
-btnT[0].setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+btnT[0].setOnChangedListener(new android.widget.CompoundButton.OnCheckedChangeListener({
 onCheckedChanged : function(toggle, onoff){
 noPvp = onoff;
 }
 }));
-btnT[1].setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+btnT[1].setOnChangedListener(new android.widget.CompoundButton.OnCheckedChangeListener({
 onCheckedChanged : function(toggle, onoff){
 signTp = onoff;
 }
 }));
-btnT[2].setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+btnT[2].setOnChangedListener(new android.widget.CompoundButton.OnCheckedChangeListener({
 onCheckedChanged : function(toggle, onoff){
 blockLog = onoff;
 }
 }));
-btnT[3].setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+btnT[3].setOnChangedListener(new android.widget.CompoundButton.OnCheckedChangeListener({
 onCheckedChanged : function(toggle, onoff){
 antiBlock = onoff;
 }
 }));
-btnT[4].setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+btnT[4].setOnChangedListener(new android.widget.CompoundButton.OnCheckedChangeListener({
 onCheckedChanged : function(toggle, onoff){
 deathAntiLack = onoff;
 }
 }));
-btnT[5].setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+btnT[5].setOnChangedListener(new android.widget.CompoundButton.OnCheckedChangeListener({
 onCheckedChanged : function(toggle, onoff){
 useLogin = onoff;
 }
 }));
-btnT[6].setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+btnT[6].setOnChangedListener(new android.widget.CompoundButton.OnCheckedChangeListener({
 onCheckedChanged : function(toggle, onoff){
 useMine = onoff;
 }
 }));
 for(var n in menusT)
-layout.addView(btnT[n]);
+layout.addView(btnT[n].mv());
 var btns = new Array();
 var menus = ["블록 설치 내역", "대화 내용 보기", "채팅창 비우기", "서버원 접속 내역", "공지 띄우기", "광산 설정"];
 for(var n in menus)
@@ -118,8 +116,8 @@ for(var n in menus)
 layout.addView(btns[n]);
 var exit = makeExit(menuS3);
 layout.addView(exit);
-var scroll = makeScroll(layout, menuS3);
 var layout2 = new android.widget.LinearLayout(ctx);
+var scroll = makeScroll(layout, layout2, menuS3);
 layout2.setOrientation(1);
 layout2.addView(title);
 layout2.addView(scroll);
