@@ -149,7 +149,7 @@ This ModPE Script include malicious code.
 ### 지형 수정 (Terrain)
 
 - 터치한 블록 정보 (Touched Block Info.)
-- setTile 매니저 (setTile Manager)
+- setTile 매니저 on/off (setTile Manager on/off)
 - 월드 에딧 지점 입력 버튼 (Button for input World Edit's Point)
 - 지점 1, 2 사이를 특정 블록으로 채움 (인벤에디터의 블록설정) (Set Blocks)
 - 지점 1, 2 사이의 특정 블록을 또다른 특정 블록으로 채움 (인벤에디터의 블록변경) (Replace Blocks)
@@ -300,7 +300,7 @@ This ModPE Script include malicious code.
 - 베트락 지급 (Give Bedrock)
 - 고급 테러 (사용 불가) (Advanced Terror (Cannot Use))
 
-### 기타 기능 (Else)
+### 기타 기능 (Misc.)
 
 - 스크린샷 버튼 (Screen Shot Button)
 - 플레이어 좌표 (Player Position)
