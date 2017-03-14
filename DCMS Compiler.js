@@ -45,7 +45,7 @@ const DCMS = {
     },
     read: function(name) {
         try {
-            return File.read(sdcard + "/Android/data/com.darktornado.darkcheater/dcms/files/" + name + ".dcms", value);
+            return File.read(sdcard + "/Android/data/com.darktornado.darkcheater/dcms/files/" + name + ".dcms");
         } catch (e) {
             DCMS.showError(e);
         }
