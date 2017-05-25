@@ -1,45 +1,70 @@
 /*
 DCMS Compiler
-version 2.0
+version 3.0
 © 2016-2017 Dark Tornado, All rights reserved.
 */
 
 const DCMS = {
+    Scripts: {},
+    list: [],
+    log: "",
     compile: function() {
         new java.lang.Thread({
             run: function() {
+                var log = "";
                 try {
+                    DCMS.log = "";
                     var eval2 = eval;
-                    var libList = new java.io.File(sdcard + "/Android/data/com.darktornado.darkcheater/dcms/library/").list().sort();
-                    for (var n = 0; n < libList.length; n++) {
+                    var libList = new java.io.File(sdcard + "/Android/data/com.darktornado.darkcheater/dcms/library/").list(); //라이브러리 include
+                    for (let n = 0; n < libList.length; n++) {
                         var cache = DCMS.loadLibrary(libList[n].substring(0, libList[n].lastIndexOf("."))).split("\n--------------------\n");
+                        log += "라이브러리 로드 : " + libList[n] + "\n";
                         eval2(cache[1] + "");
                     }
+                    log += "\n";
                     var arr1 = DCMS.getDcmsList();
                     var arr2 = [];
                     for (var n0 = 0; n0 < arr1.length; n0++) {
-                        arr2.push(arr1[n0].substring(0, arr1[n0].lastIndexOf(".")));
-                        var value = String(DCMS.read(arr2[n0]).toString()).split("function ");
-                        cache = "dcms_" + String(arr2[n0]).replace(/ /g, "_");
-                        for (var n = 0; n < value.length; n++) {
-                            if (value[n].search("defineConst") != -1) dcmsData.consts += "try{\nconst " + cache + "C = {" + value[n].substring(value[n].indexOf("){") + 2, value[n].lastIndexOf(";")).toString().replace(/;/g, ", ").replace(/=/g, ":") + "};\n}catch(e){}\n";
-                            if (value[n].search("defineVar") != -1) dcmsData.vars += "var " + cache + "V = {" + String(value[n].substring(value[n].indexOf("){") + 2, value[n].lastIndexOf(";"))).replace(/;/g, ", ").replace(/=/g, ":") + "};\n";
-                            if (value[n].search("blockTouch") != -1) dcmsData.useItem += String(value[n].substring(value[n].indexOf("{") + 1, value[n].lastIndexOf("}")) + "\n").replace(/@/g, cache + "V.").replace(/#/g, cache + "C.");
-                            if (value[n].search("entityHit") != -1) dcmsData.attackHook += String(value[n].substring(value[n].indexOf("{") + 1, value[n].lastIndexOf("}")) + "\n").replace(/@/g, cache + "V.").replace(/#/g, cache + "C.");
-                            if (value[n].search("entityDie") != -1) dcmsData.deathHook += String(value[n].substring(value[n].indexOf("{") + 1, value[n].lastIndexOf("}")) + "\n").replace(/@/g, cache + "V.").replace(/#/g, cache + "C.");
-                            if (value[n].search("modSecond") != -1) dcmsData.modSecond += String(value[n].substring(value[n].indexOf("{") + 1, value[n].lastIndexOf("}")) + "\n").replace(/@/g, cache + "V.").replace(/#/g, cache + "C.");
-                            if (value[n].search("chatSend") != -1) dcmsData.chatHook += String(value[n].substring(value[n].indexOf("{") + 1, value[n].lastIndexOf("}")) + "\n").replace(/@/g, cache + "V.").replace(/#/g, cache + "C.");
-                            if (value[n].search("selectMap") != -1) dcmsData.newLevel += String(value[n].substring(value[n].indexOf("{") + 1, value[n].lastIndexOf("}")) + "\n").replace(/@/g, cache + "V.").replace(/#/g, cache + "C.");
-                            if (value[n].search("selectServer") != -1) dcmsData.serverConnectHook += String(value[n].substring(value[n].indexOf("{") + 1, value[n].lastIndexOf("}")) + "\n").replace(/@/g, cache + "V.").replace(/#/g, cache + "C.");
-                            if (value[n].search("quitToTitle") != -1) dcmsData.leaveGame += String(value[n].substring(value[n].indexOf("{") + 1, value[n].lastIndexOf("}")) + "\n").replace(/@/g, cache + "V.").replace(/#/g, cache + "C.");
+                        arr2[n0] = String(arr1[n0].substring(0, arr1[n0].lastIndexOf(".")));
+                        var funcs = String(DCMS.read(arr2[n0]).toString()).split("function ");
+                        arr2[n0] = arr2[n0].replace(/ /g, "_");
+                        let Super = "DCMS.Scripts." + arr2[n0]; //하위 객체 생성
+                        DCMS.list.push(arr2[n0] + "");
+                        log += Super + " = {};\n";
+                        eval2(Super + " = {};");
+                        var eventListeners = ["blockTouch", "entityHit", "entityDie", "modSecond", "chatSend", "selectMap", "selectServer", "quitToTitle"]; //비어있는 이밴트 리스너들 생성
+                        for (let n = 0; n < eventListeners.length; n++) {
+                            eval2(Super + "." + eventListeners[n] + " = function(){};");
                         }
+                        for (let n = 1; n < funcs.length; n++) {
+                            if (funcs[n].indexOf("defineVar") != -1) { //전역 변수 처리
+                                var vars = String(funcs[n]).substring(funcs[n].indexOf("{") + 1, funcs[n].lastIndexOf("}") - 1).toString().split(";");
+                                for (let m = 0; m < vars.length - 1; m++) {
+                                    log += Super + "." + vars[m] + ";\n";
+                                    eval2(Super + "." + vars[m]);
+                                }
+                            } else { //함수, 이벤트 리스너 처리
+                                print(funcs[n]);
+                                funcs[n] = String(funcs[n]).replace(/@/g, Super + ".").replace(/#/g, Super + "."); //전역변수랑 함수 호출 처리
+                                let cache = funcs[n].split("");
+                                cache.splice(cache.indexOf("("), 0, " = function"); //함수 정의 처리
+                                funcs[n] = cache.join("");
+                                print(funcs[n]);
+                                log += Super + "." + funcs[n] + ";\n";
+                                eval2(Super + "." + funcs[n] + ";");
+                            }
+                        }
+                        log += "\n";
                     }
-                    eval2(dcmsData.consts + dcmsData.vars + "");
                     compileFinish = true;
                     Dark.toast("DCMS Compile Finish.");
                 } catch (e) {
-                    DCMS.showError(e);
+                    //DCMS.showError(e);
+                    log += "오류 : " + e + "\n";
+                    DCMS.log = log;
+                    //Dark.showDialog("Error during Compile", log);
                 }
+                Dark.showDialog("Result", log);
             }
         }).start();
     },
@@ -88,23 +113,7 @@ const DCMS = {
     },
     loadDcms: function(file, dcmsName) {
         try {
-            if (!file.exists()) return "";
-            var fis = new java.io.FileInputStream(file);
-            var isr = new java.io.InputStreamReader(fis);
-            var br = new java.io.BufferedReader(isr);
-            var str = br.readLine();
-            var line = "";
-            while ((line = br.readLine()) != null) {
-                str += "\n" + line;
-            }
-            fis.close();
-            isr.close();
-            br.close();
-            var file2 = new java.io.File(sdcard + "/Android/data/com.darktornado.darkcheater/dcms/files/" + dcmsName + ".dcms");
-            var fos = new java.io.FileOutputStream(file2);
-            var str = new java.lang.String(str);
-            fos.write(str.getBytes());
-            fos.close();
+            File.copy(file, new java.io.File(sdcard + "/Android/data/com.darktornado.darkcheater/dcms/files/" + dcmsName + ".dcms"));
         } catch (e) {
             DCMS.showError(e);
         }
@@ -163,18 +172,8 @@ const DCMS = {
                         onCheckedChanged: function(swit, onoff) {
                             Dark.save("useDcms", onoff);
                             if (onoff) {
-                                dcmsData = {
-                                    consts: "",
-                                    vars: "",
-                                    useItem: "",
-                                    attackHook: "",
-                                    deathHook: "",
-                                    modSecond: "",
-                                    chatHook: "",
-                                    newLevel: "",
-                                    serverConnectHook: "",
-                                    leaveGame: ""
-                                };
+                                DCMS.Scripts = {};
+                                DCMS.list = [];
                                 DCMS.compile();
                             } else {
                                 compileFinish = false;
@@ -183,7 +182,7 @@ const DCMS = {
                     }));
                     layout.addView(use);
                     var btns = new Array();
-                    var menus = ["적용한 DCMS 목록", "DCMS 불러오기", "라이브러리 목록", "라이브러리 다운", "도움말"];
+                    var menus = ["적용한 DCMS 목록", "DCMS 불러오기", "라이브러리 목록", "라이브러리 다운", "컴파일 로그 보기", "도움말", "공식 사이트로 이동"];
                     for (var n in menus) {
                         btns[n] = new android.widget.Button(ctx);
                         btns[n].setText(menus[n]);
@@ -210,7 +209,15 @@ const DCMS = {
                                             }).start();
                                             break;
                                         case 4:
-                                            Dark.showDialog("도움말", "DCMS는 Dark Cheater Modify Script의 약자로, 다크 치터에 적용하는 스크립트(?)입니다. 당연히, ModPE 스크립트가 기반이며, 확장자는 .dcms입니다.\n일부 DCMS는 라이브러리를 필요로 합니다. 라이브러리가 없을 시, 오류가 발생합니다.\nDCMS 사용 여부를 껐다가 킬 때, 오류가 발생하는 경우, 사용 여부를 비활성화 시키식 블록런처를 다시 실행한 뒤, 사용 여부를 다시 활성화 시키시면 됩니다.");
+                                            Dark.showDialog("컴파일 로그", DCMS.log);
+                                            break;
+                                        case 5:
+                                            Dark.showDialog("도움말", "DCMS는 Dark Cheater Modify Script의 약자로, 다크 치터에 적용하는 스크립트(?)입니다. 당연히, ModPE 스크립트가 기반이며, 확장자는 .dcms입니다.\n일부 DCMS는 라이브러리를 필요로 합니다. 라이브러리가 없을 시, 오류가 발생합니다.");
+                                            break;
+                                        case 6:
+                                            var uri = new android.net.Uri.parse("http://darktornado.dothome.co.kr/darkCheater/dcms.html");
+                                            var link = new android.content.Intent(android.content.Intent.ACTION_VIEW, uri);
+                                            ctx.startActivity(link);
                                             break;
                                     }
                                 } catch (e) {
