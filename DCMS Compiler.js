@@ -7,7 +7,7 @@ version 3.0
 const DCMS = {
     Scripts: {},
     list: [],
-    log: "",
+    log: "컴파일 기록이 없습니다.",
     compile: function() {
         new java.lang.Thread({
             run: function() {
@@ -64,7 +64,6 @@ const DCMS = {
                     DCMS.log = log;
                     //Dark.showDialog("Error during Compile", log);
                 }
-                Dark.showDialog("Result", log);
             }
         }).start();
     },
