@@ -59,9 +59,9 @@ const DCMS = {
                 } catch (e) {
                     //DCMS.showError(e);
                     log += "오류 : " + e + "\n";
-                    DCMS.log = log;
                     //Dark.showDialog("Error during Compile", log);
                 }
+            DCMS.log = log;
             }
         }).start();
     },
