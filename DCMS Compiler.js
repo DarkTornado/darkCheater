@@ -44,12 +44,10 @@ const DCMS = {
                                     eval2(Super + "." + vars[m]);
                                 }
                             } else { //함수, 이벤트 리스너 처리
-                                print(funcs[n]);
                                 funcs[n] = String(funcs[n]).replace(/@/g, Super + ".").replace(/#/g, Super + "."); //전역변수랑 함수 호출 처리
                                 let cache = funcs[n].split("");
                                 cache.splice(cache.indexOf("("), 0, " = function"); //함수 정의 처리
                                 funcs[n] = cache.join("");
-                                print(funcs[n]);
                                 log += Super + "." + funcs[n] + ";\n";
                                 eval2(Super + "." + funcs[n] + ";");
                             }
