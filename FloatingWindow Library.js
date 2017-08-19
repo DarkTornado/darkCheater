@@ -7,7 +7,7 @@ function FloatingWindow(){
 this.window = new android.widget.PopupWindow(ctx);
 this.title = "";
 this.titleColor = android.graphics.Color.CYAN;
-this.color = android.graphics.Color.argb(110, 100, 100, 100);
+this.color = android.graphics.Color.argb(120, 80, 80, 80);
 this.drawable = null;
 this.layout = new android.widget.LinearLayout(ctx);
 }
