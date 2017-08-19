@@ -1,19 +1,15 @@
 /*
 FloatingWindow Library for Dark Cheater
-© 2016 Dark Tornado, All rights reserved.
+© 2016-2017 Dark Tornado, All rights reserved.
 */
 
 function FloatingWindow(){
-this.ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
-this.window = new android.widget.PopupWindow(this.ctx);
+this.window = new android.widget.PopupWindow(ctx);
 this.title = "";
-this.titleColor = android.graphics.Color.BLUE;
-this.color = android.graphics.Color.argb(110, 100, 255, 100);
+this.titleColor = android.graphics.Color.CYAN;
+this.color = android.graphics.Color.argb(110, 100, 100, 100);
 this.drawable = null;
-this.layout = new android.widget.LinearLayout(this.ctx);
-this.dp = function(dips){
-return Math.ceil(dips * this.ctx.getResources().getDisplayMetrics().density);
-};
+this.layout = new android.widget.LinearLayout(ctx);
 }
 
 FloatingWindow.prototype = {
@@ -24,7 +20,7 @@ setTitleColor: function(color){
 this.titleColor = color;
 },
 addText: function(text, func){
-var txt = new android.widget.TextView(this.ctx);
+var txt = new android.widget.TextView(ctx);
 txt.setText(text);
 txt.setTextColor(android.graphics.Color.WHITE);
 txt.setTextSize(15);
@@ -43,7 +39,7 @@ print(e);
 this.layout.addView(txt);
 },
 addToggleText: function(text, func1, func2, tf){
-var txt = new android.widget.TextView(this.ctx);
+var txt = new android.widget.TextView(ctx);
 txt.setText(text);
 if(tf) txt.setTextColor(android.graphics.Color.YELLOW);
 else txt.setTextColor(android.graphics.Color.WHITE);
@@ -80,7 +76,7 @@ this.drawable = drawable;
 },
 show: function(){
 var cache = this;
-var ctx = this.ctx;
+var ctx = ctx;
 ctx.runOnUiThread(new java.lang.Runnable({
 run: function(){
 try{
@@ -91,9 +87,9 @@ title.setText(cache.title);
 title.setTextColor(cache.titleColor);
 title.setTextSize(17);
 title.setGravity(android.view.Gravity.CENTER);
-var pad = cache.dp(1);
+var pad = dip2px(ctx, 1);
 title.setPadding(pad, pad, pad, pad);
-pad = cache.dp(2);
+pad = dip2px(ctx, 2);
 cache.layout.setPadding(pad, pad, pad, pad);
 var scroll = new android.widget.ScrollView(ctx);
 scroll.addView(cache.layout);
@@ -106,11 +102,11 @@ onClick: function(v){
 try{
 if(layout.getChildCount() == 1){
 layout.addView(scroll);
-cache.window.update(cache.dp(100), cache.dp(130));
+cache.window.update(dip2px(ctx, 100), dip2px(ctx, 130));
 }
 else{
 layout.removeView(scroll);
-cache.window.update(cache.dp(100), cache.dp(30));
+cache.window.update(dip2px(ctx, 100), dip2px(ctx, 30));
 }
 }
 catch(e){
@@ -146,11 +142,11 @@ print(e);
 }
 }));
 cache.window.setContentView(layout);
-cache.window.setWidth(cache.dp(100));
-cache.window.setHeight(cache.dp(130));
+cache.window.setWidth(dip2px(ctx, 100));
+cache.window.setHeight(dip2px(ctx, 130));
 if(cache.drawable != null) cache.window.setBackgroundDrawable(cache.drawable);
 else cache.window.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(cache.color));
-cache.window.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.LEFT | android.view.Gravity.TOP, cache.dp(90), cache.dp(90));
+cache.window.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.LEFT | android.view.Gravity.TOP, dip2px(ctx, 90), dip2px(ctx, 90));
 }
 catch(e){
 print(e);
@@ -160,7 +156,7 @@ print(e);
 },
 close: function(){
 var window = this.window;
-this.ctx.runOnUiThread(new java.lang.Runnable({
+ctx.runOnUiThread(new java.lang.Runnable({
 run: function(){
 try{
 if(window != null) window.dismiss();
