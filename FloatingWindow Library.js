@@ -76,7 +76,6 @@ this.drawable = drawable;
 },
 show: function(){
 var cache = this;
-var ctx = ctx;
 ctx.runOnUiThread(new java.lang.Runnable({
 run: function(){
 try{
