@@ -145,6 +145,7 @@ cache.window.setWidth(dip2px(ctx, 100));
 cache.window.setHeight(dip2px(ctx, 130));
 if(cache.drawable != null) cache.window.setBackgroundDrawable(cache.drawable);
 else cache.window.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(cache.color));
+cache.window.setAnimationStyle(android.R.style.Animation_InputMethod);
 cache.window.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.LEFT | android.view.Gravity.TOP, dip2px(ctx, 90), dip2px(ctx, 90));
 }
 catch(e){
