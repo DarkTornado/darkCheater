@@ -31,6 +31,7 @@ This ModPE Script include malicious code.
 - 포션 조합법 보기 (Potion Recipe)
   - 포션 지급(길게 눌러서 실행) (Give Potion(Long Touch for Use))
 - 가상 인벤토리 (Virtual Inv.)
+- 크리 인벤에 아이템 추가 (Add Item to Creative Inv.)
 
 ### 갑옷 슬롯 수정(길게 눌러서 실행) (Armor Slot(Long Touch for Use))
 
@@ -46,7 +47,7 @@ This ModPE Script include malicious code.
 - 블록 추적 (Trace Block)
 - 시간 설정 (Time Set)
 - 게임모드 변경 (Change Game Mode)
-- 체력 설정 (Set Health)
+- 체력 설정(최대 체력 설정 포함) (Set Health(Include set max health)
   - 허기 설정(길게 눌러서 실행) (Set Hunger(Long Touch for Use))
 - 플레이어 이동 (Move Player)
 - 날씨 설정 (Weather Set)
@@ -60,28 +61,31 @@ This ModPE Script include malicious code.
 ### 플레이어 관리 (Player Manager)
 
 - 플레이어 체력 표시 (Show Player Health)
-- 체력 설정 (Set Health)
+- 기능 사용 알림 (Alert Function usage)
+- 플레이어 갑옷 세이브 (Save Players Armor Inv.)
+- 체력 설정(최대 체력 설정 포함) (Set Health(Include set max health)
+- 전원 사살 (Kill All)
+  - 전원 소환(길게 눌러서 실행) (Summon All(Long Touch for Use))
 - 소환 (Summon)
 - 플레이어를 특정 위치로 이동 (Move Player)
 - 플레이어에게 이동 (Go to Player)
 - 추방 (Kick)
 - 아이템 지급 (Give Item)
-- 전원 사살 (Kill All)
-- 전원 사살 (Summon All)
 - 포션 효과 부여 (Give Potion Effects)
   - 포션 효과 삭제(길게 눌러서 실행) (Remove Potion Effects(Long Touch for Use))
 - 조지기 (Give a Fxxk)
 - Client Id 보기 (See Client ID)
 - 위치 확인 (Check Position)
-- 플레이어의 시야 보기 (See View)
+- 시야 보기 (See View)
 - 칭호 부여 (Give Title)
   - 칭호 회수(길게 눌러서 실행) (Remove Title(Long Touch for Use))
-- 최대 체력 설정 (Set Max Health)
 - 갑옷 슬롯 보기 (See Armor Slot)
 - 메시지 전송 (Send Message)
 - 불붙이기 (Burn)
 - 경험치 지급 (Give Exp.)
-- OP 권한 부여/회수(길게 눌러서 세부 설정) (Give OP/Remove OP(Long Touch for Detail Settings))
+- 게임모드 변경 (Change Game Mode)
+- OP 권한 부여/회수 (Give OP/Remove OP)
+- SU 권한 부여/회수(길게 눌러서 세부 설정) (Give SU/Remove SU(Long Touch for Detail Settings))
   - .day
   - .night
   - .tp
@@ -93,6 +97,7 @@ This ModPE Script include malicious code.
   - .call
   - .heal
   - .kick (OP가 서버장에게 사용 불가/OP cannot use this command to Admin)
+  - .gm
 
 ### 플레이어들 관리(길게 눌러서 실행) (Players Manager(Long Touch for Use))
 
@@ -122,10 +127,12 @@ This ModPE Script include malicious code.
 
 ### 엔티티 관리 (Entity Manager)
 
+- 엔티티 목록 숨기기 (Hide Entity List)
 - 엔티티 생성 방지 (Prevent Entity Spawn)
 - 엔티티 생성 방지 (Show Entity Health)
 - 터치한 엔티티 즉사 (Kill Touched Entity)
 - 터치한 엔티티 체력 표시 (Show Touched Entity's Health)
+- 몹 멈추기 (Stop Mobs)
 - 엔티티 스폰 (Spwan Entity)
   - 목록에 없는 엔티티 스폰(길게 눌러서 실행) (Spawn Entity not exists in Entity List(Long Touch for Use))
 - 엔티티 삭제 (Remove Entities)
@@ -145,11 +152,13 @@ This ModPE Script include malicious code.
 - 체력 설정 (Set Health)
 - 삭제 (Remove)
 - 포션 효과 부여 (Give Potion Effects)
+- 최대 체력 설정 (Set Max Health)
 
 ### 지형 수정 (Terrain)
 
 - 터치한 블록 정보 (Touched Block Info.)
 - setTile 매니저 on/off (setTile Manager on/off)
+- 가상 블록 (Fake Block)
 - 월드 에딧 지점 입력 버튼 (Button for input World Edit's Point)
 - 지점 1, 2 사이를 특정 블록으로 채움 (인벤에디터의 블록설정) (Set Blocks)
 - 지점 1, 2 사이의 특정 블록을 또다른 특정 블록으로 채움 (인벤에디터의 블록변경) (Replace Blocks)
@@ -200,6 +209,7 @@ This ModPE Script include malicious code.
 - 스마트 무빙 (Smart Moving)
 - 낙뎀 방지 (Remove Falling Damage)
 - 점프 강화 (Reinforce Jumping)
+- 2단 점프 사용 (Use Double Jump)
 - 터치한 곳으로 순간이동/순보/포물선 점프 (TP/Dash/Flash Jump)
 - 좌표 기억/이동 (Remember Position/Move)
 - 바라보는 곳으로 순간이동 (Go to Looking Point)
@@ -223,7 +233,7 @@ This ModPE Script include malicious code.
 - 연속 채팅 방지 (Prevent Rapid Chat)
 - 서버원 접속 방지 (Prevent Accessing Client)
 - 하이퍼 로그 사용 (Use Hyper Log)
-- The Seed
+- The Seed (자동 서버 관리)
 - 서버장 사칭 방지 (Prevent Admin Impersonate)
 - 서버 목록 숨기기 (Hide Server List)
 - 이름표 숨기기 (Hide Name Tag)
@@ -235,6 +245,10 @@ This ModPE Script include malicious code.
 - 플레이어의 이동 금지 (Block Player's Movement)
 - 내 ip 확인 (Check My IP)
 - 포션 효과 방지 (Prevent Potion Effects)
+- 최대 서버원 설정 (Set Max Players)
+- 인벤토리 세이브(서버원 포함) (Inventory Save(Include Clients))
+- 낙하 데미지 삭제(서버원 포함) (Remove Falling Damage(Include Clients))
+- 환영 인사 설정 (Set Welcome Message)
 
 ### Server Plugin(길게 눌러서 실행) (Long Touch for Use)
 
@@ -281,6 +295,7 @@ This ModPE Script include malicious code.
   - 테러 기록 초기화(길게 눌러서 실행) (Reset Terror Log(Long Touch for Use))
 - 신고된 테러범 목록 (Notified Terrorlist List)
   - 테러범 신고(길게 눌러서 실행) (Notify Terrorlist(Long Touch for Use))
+- 강제 OP 방지 (Prevent Force OP)
 
 ### 서버 테러(길게 눌러서 실행) (Server Terror(Long Touch for Use))
 
@@ -289,6 +304,7 @@ This ModPE Script include malicious code.
 - 폭발 (Explosion)
 - 메테오 (Meteor)
 - 불 (Fire)
+- 번개 (Thunder)
 - 서버원 테러 포함 on/off (Include clients on/off)
 
 ### 테러 도우미(더블 터치로 실행) (Terror Helper더블 터치로 실행 (Double Touch for Use))
@@ -298,6 +314,7 @@ This ModPE Script include malicious code.
 - 용암 양동이 지급 (Give Lava Bucket)
 - 거미줄 지급 (Give Web)
 - 베트락 지급 (Give Bedrock)
+- 기기밴 해제 (Unban(?) Device Ban)
 - 고급 테러 (사용 불가) (Advanced Terror (Cannot Use))
 
 ### 기타 기능 (Misc.)
@@ -338,12 +355,13 @@ This ModPE Script include malicious code.
 ### 추가 기능(길게 눌러서 실행) (Plus(Long Touch for Use))
 
 - 주기적으로 창고 확인 (Check Chest Position Periodically)
-- 엔더 반응기 (Ender Reactor)
-- Dark Cheater ESP
+- Dark Cheater ESP (능력자)
 - 블록 무한 설치 (Infinity Block)
 - 크리에이티브처럼 블록 캐기 (Destroy Block as Creative)
-- Fire Editor
+- Fire Editor (빼액?)
 - SD 카드 초기화 1차 방어 (Prevent SD Card Reset(Primary Defense))
+- 화면 꺼짐 방지 (Keep Screen On)
+- Hack Windows (핵 메뉴)
 - 커스텀 아이템 추가 (Add Custom Item)
 - 적용된 스크립트 수정 (Edit ModPE Scripts)
 - 적용된 모드 목록 보기 (See PTP Mod List)
@@ -373,7 +391,8 @@ This ModPE Script include malicious code.
 - 네이티브 센드챗 부활 (Revive nativeSendChat)
 - 이벤트 리스너로 서버원 감지 (Notice Clients with Event Listener)
 - 키보트 전체화면 off (Keyboard Fullscreen off)
-- showTipMessage 픽스 (Fix ModPE.showTipMessage)
+- 쇼 팁 메시지 픽스 (Fix ModPE.showTipMessage)
+- 블록런처 1.15.x 오류 수정 (Fix Errors in Blocklauncher 1.15.x)
 - UI 설정 (UI Settings)
 - 웹 브라우저 설정 (Web View Set)
   - 전체 화면 (Full Screen)
@@ -419,10 +438,27 @@ This ModPE Script include malicious code.
 - 메뉴에서 검은색 글자 사용 (Use Black Text)
 - Dark Effect 사용 (Use Dark Effect)
 - 토글 버튼 강제 반투명화 (Give Alpha to Toggle Button)
+- X 버튼 투명하게 설정 (Use Transparent X Button)
+- 이미지 배경화면 사용 (Set Background with Image)
 - 블록런처 UI 변경 (Change Blocklauncher UI)
+- 메뉴 생상 설정 (Set Menu's Color)
 - 다크 치터 테마 관리 (Dark Cheater Theme Manager)
 - 토스트 색상 설정 (Set Toast's Color)
 - 디자인 설정 (Design Settings)
+  - 작은 창 사용 (Use Small Menu)
+  - 버튼 간격 설정 (Set Distance between Buttons)
+  - 다크 치터 기본 디자인 (Use Dark Cheater's Basic Design)
+  - 블록런처 기본 디자인 (Use Blocklauncher's Basic Design)
+  - 새로운 디자인 (Use New Design)
+  - 새로운 디자인 - 불투명 (Use New Design without alpha)
+  - 새로운 디자인 - 밝은 (Use New Light Design)
+  - 새로운 디자인 - 밝은 불투명 (Use New Light Design without alpha)
+  - MCPE(0.14.x 이하) (Use MCPE Design(under 0.14.x))
+  - MCPE(0.15.x 이상) (Use MCPE Design(over 0.15.x))
+  - 메터리얼 같은 디자인(검정) (Use Design Looks Like Material Design(Black))
+  - 메터리얼 같은 디자인(초록) (Use Design Looks Like Material Design(Green))
+  - 양심 없는 디자인 (Use Design without Conscience)
 - 나가기/X버튼 사용 (Use Exit/X Button)
 - 버튼 세로 크기 설정 (Set Button's Height)
+- 애니메이션 설정 (Animation Settings)
 
