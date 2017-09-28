@@ -11,7 +11,7 @@ If you do not abide by this, Dark Cheater will be disabled remotely.
 
 This ModPE Script include malicious code.
 
-<input type=button value="Download" onClick="location.href='http://darktornado.dothome.co.kr/darkCheater/download.html';">
+<input type="button" value="Download" onClick="location.href='http://darktornado.dothome.co.kr/darkCheater/download.html';">
 
 ## <Function List>
 
