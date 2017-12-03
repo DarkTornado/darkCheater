@@ -1,1 +1,1 @@
-&login2&1register2&report&
+&login2&register2&report&
