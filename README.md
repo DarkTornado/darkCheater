@@ -1,6 +1,6 @@
 # Dark Cheater
 
-© 2015-2017 Dark Tornado, All rights reserved.
+© 2015-2019 Dark Tornado, All rights reserved.
 
 Not allowed to use Dark Cheater's source without my permission.
 Not allowed sharing Dark Cheater.
