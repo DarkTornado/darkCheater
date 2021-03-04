@@ -3,10 +3,10 @@
 © 2015-2021 Dark Tornado, All rights reserved.
 
 * Dark Tornado's Main ModPE Script in 2015.
-* Use Dark Cheater's source without my permission is NOT allowed.
+* Using Dark Cheater's source without my permission is NOT allowed.
 * Sharing Dark Cheater without my permission is NOT allowed.
 * You can use Dark Cheaeter for studying ModPE Script.
-* If you do not abide by this, Dark Cheater will be disabled remotely.
+* If you do not follow this, `Dark Cheater` will be disabled remotely.
 * This ModPE Script include malicious code.
 
 ## 기능 목록 (Function List)
