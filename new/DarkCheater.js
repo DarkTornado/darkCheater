@@ -18,6 +18,10 @@ const Ui = {};
 const FileUtils = {};
 const WorldEdit = {};
 const LangList = {};
+const Settings = {
+timeLock : false,
+timeLockData : 0
+};
 var Lang = {};
 
 const dark = {
@@ -197,9 +201,95 @@ Ui.printError(e);
 }
 }).start();
 };
+Dark.getTime = (n) => {
+var day = new Date();
+if(n==1) return day.getFullYear()+"."+(day.getMonth()+1)+"."+day.getDate();
+else if(n==2) return day.getHours()+"'"+day.getMinutes()+"'"+day.getSeconds();
+else return day.getFullYear()+"."+(day.getMonth()+1)+"."+day.getDate()+" "+day.getHours()+"'"+day.getMinutes()+"'"+day.getSeconds();
+};
+
+FileUtils.copy = function(path1, path2){
+try{
+var file1 = new java.io.File(path1);
+var file2 = new java.io.File(path2);
+var fis = new java.io.FileInputStream(file1).getChannel();
+var fos = new java.io.FileOutputStream(file2).getChannel();
+fis.transferTo(0, fis.size(), fos);
+fis.close();
+fos.close();
+}
+catch(e){
+Ui.printError(e);
+}
+};
+FileUtils.copyFolder = function(path1, path2){
+try{
+var file1 = new java.io.File(path1);
+var file2 = new java.io.File(path2);
+if(file1.isDirectory()){
+var file3 = new java.io.File(path2, file1.getName());
+file3.mkdirs();
+var child = file1.list();
+for(var n=0;n<child.length;n++){
+var file4 = new java.io.File(file1, child[n]);
+if(file4.isDirectory()) FileUtils.copyFolder(file4, file3);
+else FileUtils.copy(file4, new java.io.File(file3, child[n]));
+}
+}
+else{
+FileUtils.copy(path1, path2);
+}
+}
+catch(e){
+Ui.printError(e);
+}
+};
+FileUtils.save = function(path, value){
+try{
+var file = new java.io.File(path);
+var fos = new java.io.FileOutputStream(file);
+var str = new java.lang.String(value);
+fos.write(str.getBytes());
+fos.close();
+}
+catch(e){
+Ui.printError(e);
+}
+};
+FileUtils.read = function(path){
+try{
+var file = new java.io.File(path);
+if(!file.exists()) return "";
+var fis = new java.io.FileInputStream(file);
+var isr = new java.io.InputStreamReader(fis);
+var br = new java.io.BufferedReader(isr);
+var str = br.readLine();
+var line = "";
+while((line = br.readLine()) != null){
+str += "\n" + line;
+}
+fis.close();
+isr.close();
+br.close();
+return str;
+}
+catch(e){
+Ui.printError(e);
+}
+};
+FileUtils.remove = function(path){
+try{
+var file = new java.io.File(path);
+if(file.exists()) file.delete();
+}
+catch(e){
+Ui.printError(e);
+}
+};
 
 Ui.TextFlag = {
-ITEM_NAME_CHANGE: 0
+ITEM_NAME_CHANGE: 0,
+WORLD_TIME_SET : 1
 };
 Ui.toast = (msg) => {
 ctx.runOnUiThread(new java.lang.Runnable({
@@ -271,8 +361,8 @@ Ui.showDialog("Error in Dark Cheater", e+"\nAt: "+e.lineNumber);
 };
 Ui.inputText = (flag, onlyNumber, params) => {
 try {
-var titles = [Lang.item_change_name];
-var hints = [Lang.change_item_name_hint];
+var titles = [Lang.item_change_name, Lang.time_set];
+var hints = [Lang.change_item_name_hint, Lang.time_hint];
 var dialog = new android.app.AlertDialog.Builder(ctx);
 dialog.setTitle(titles[flag]);
 var layout = new dark.ui.LinearLayout(ctx);
@@ -291,6 +381,10 @@ var input = txt.getText().toString();
 switch (flag){
 case Ui.TextFlag.ITEM_NAME_CHANGE:
 Player.setItemCustomName(Player.getSelectedSlotId(), input);
+break;
+case Ui.TextFlag.WORLD_TIME_SET :
+Level.setTime(input);
+Level.executeCommand("/time set "+input, true);
 break;
 }
 }
@@ -492,6 +586,87 @@ catch(e){
 Ui.printError(e);
 }
 };
+Ui.worldMenu = () => {
+try{
+menuW = new dark.ui.Window(ctx);
+var layout = new android.widget.LinearLayout(ctx);
+layout.setOrientation(1);
+var title = new android.widget.TextView(ctx);
+title.setText(Lang.inven_menu);
+title.setTextSize(20);
+title.setTextColor(android.graphics.Color.WHITE);
+title.setGravity(android.view.Gravity.CENTER);
+var pad = dip2px(5);
+title.setPadding(pad, pad, pad, dip2px(15));
+layout.addView(title);
+var margin = new android.widget.LinearLayout.LayoutParams(-1, -2);
+var mar = dip2px(1);
+margin.setMargins(mar, mar, mar, mar);
+var tl = new android.widget.Switch(ctx);
+tl.setText(Lang.time_lock);
+tl.setChecked(Settings.timeLock);
+tl.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+onCheckedChanged : function(check, onoff){
+Settings.timeLock = onoff;
+Settings.timeLockData = Level.getTime();
+}
+}));
+layout.addView(tl);
+var btns = [];
+var menus = [Lang.time_set, Lang.gm, Lang.default_gm, Lang.health_hunger, Lang.back_up, Lang.close];
+for(var n=0;n<menus.length;n++){
+btns[n] = new dark.ui.Button(ctx);
+btns[n].setText(menus[n]);
+btns[n].setId(n);
+btns[n].setLayoutParams(margin);
+btns[n].setOnClickListener(new android.view.View.OnClickListener({
+onClick : function(v){
+switch(v.getId()){
+case 0:
+Ui.inputText(Ui.TextFlag.WORLD_TIME_SET, true);
+break;
+case 1:
+Ui.gamemodeList(false, [Player.getEntity()]);
+break;
+case 2:
+Ui.gamemodeList(true);
+break;
+case 3:
+Ui.healthDialog();
+break;
+case 4:
+Ui.toast(Lang.back_up_start);
+new java.lang.Thread({
+run : function(){
+var folder = new java.io.File(sdcard+"/DarkCheaterMapBackUp/");
+folder.mkdirs();
+FileUtils.copyFolder(sdcard+"/games/com.mojang/minecraftWorlds/"+Level.getWorldDir()+"/", folder);
+var file1 = new java.io.File(sdcard+"/DarkCheaterMapBackUp/"+Level.getWorldDir()+"/");
+var file2 = new java.io.File(sdcard+"/DarkCheaterMapBackUp/"+Level.getWorldDir()+" ("+Level.getWorldName()+", "+Dark.getTime()+"/");
+file1.renameTo(file2);
+Ui.toast(Lang.back_up_end);
+}
+}).start();
+break;
+case 5:
+menuW.dismiss();
+menuW = null;
+break;
+}
+}
+}));
+layout.addView(btns[n]);
+}
+layout.setPadding(pad, pad, pad, pad);
+var scroll = new android.widget.ScrollView(ctx);
+scroll.addView(layout);
+menuW.setContentView(scroll);
+menuW.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.CENTER, 0, 0);
+}
+catch(e){
+Ui.printError(e);
+}
+};
 Ui.closeAll = () => {
 if(menuI!=null){
 menuI.dismiss();
@@ -686,6 +861,104 @@ Ui.printError(e);
 }
 };
 
+Ui.gamemodeList = (isDefault, target) => {
+try{
+var dialog = new android.app.AlertDialog.Builder(ctx);
+dialog.setTitle(isDefault?Lang.default_gm:Lang.gm);
+dialog.setItems(Lang.gms, new android.content.DialogInterface.OnClickListener({
+onClick : function(m, w){
+if(isDefault){
+Level.setGameMode(w);
+Ui.toast(Lang.gms[w]+Lang.gm_changed);
+}
+else{
+new java.lang.Thread({
+run : function(){
+for(var n=0;n<target.length;n++){
+var pn = Player.getName(target[n]);
+Level.executeCommand("/gamemode "+w+" "+pn, true);
+}
+Ui.toast(Lang.gms[w]+Lang.gm_changed);
+}
+}).start();
+}
+}
+}));
+dialog.setNegativeButton(Lang.cancel, null);
+dialog.show();
+}
+catch(e){
+Ui.printError(e);
+}
+};
+Ui.healthDialog = (target) => {
+try{
+var dialog = new android.app.AlertDialog.Builder(ctx);
+dialog.setTitle(Lang.health_hunger);
+var layout = new dark.ui.LinearLayout(ctx);
+layout.setOrientation(1);
+
+var txt1 = new android.widget.TextView(ctx);
+txt1.setText(Lang.health+" : ");
+txt1.setTextSize(18);
+layout.addView(txt1);
+var txt2 = new android.widget.EditText(ctx);
+txt2.setHint(Lang.health+" "+Lang.hint_input);
+txt2.setInputType(android.text.InputType.TYPE_CLASS_NUMBER|android.text.InputType.TYPE_NUMBER_FLAG_SIGNED);
+layout.addView(txt2);
+var txt3 = new android.widget.TextView(ctx);
+txt3.setText("\n"+Lang.max_health+" : ");
+txt3.setTextSize(18);
+layout.addView(txt3);
+var txt4 = new android.widget.EditText(ctx);
+txt4.setHint(Lang.max_health+" "+Lang.hint_input);
+txt4.setInputType(android.text.InputType.TYPE_CLASS_NUMBER|android.text.InputType.TYPE_NUMBER_FLAG_SIGNED);
+layout.addView(txt4);
+if(target==null){
+var txt5 = new android.widget.TextView(ctx);
+txt5.setText("\n"+Lang.hunger+" : ");
+txt5.setTextSize(18);
+layout.addView(txt5);
+var txt6 = new android.widget.EditText(ctx);
+txt6.setHint(Lang.hunger+" "+Lang.hint_input);
+txt6.setInputType(android.text.InputType.TYPE_CLASS_NUMBER|android.text.InputType.TYPE_NUMBER_FLAG_SIGNED);
+layout.addView(txt6);
+txt2.setText(Entity.getHealth(Player.getEntity())+"");
+txt4.setText(Entity.getMaxHealth(Player.getEntity())+"");
+txt6.setText(Player.getHunger()+"");
+}
+
+var scroll = new android.widget.ScrollView(ctx);
+scroll.addView(layout);
+dialog.setView(scroll);
+dialog.setNegativeButton(Lang.cancel, null);
+dialog.setPositiveButton(Lang.apply, new android.content.DialogInterface.OnClickListener({
+onClick : function(v){
+var health = txt2.getText();
+var maxHealth = txt4.getText();
+if(target==null){
+var hunger = txt6.getText();
+Player.setHealth(health);
+Entity.setMaxHealth(Player.getEntity(), maxHealth);
+Player.setHunger(hunger);
+Ui.toast(Lang.health_hunger_msg);
+}
+else{
+for(var n=0;n<target.length;n++){
+Entity.setHealth(target[n], health);
+Entity.setMaxHealth(target[n], maxHealth);
+}
+Ui.toast(Lang.health_msg);
+}
+}
+}));
+dialog.show();
+}
+catch(e){
+Ui.printError(e);
+}
+};
+
 var btn = null;
 var btnS = null;
 var btnP = null;
@@ -702,6 +975,13 @@ return Math.ceil(dips * ctx.getResources().getDisplayMetrics().density);
 }
 
 Ui.creaeteButton();
+
+function modTick(){
+if(Settings.timeLock){
+Level.setTime(Settings.timeLockData);
+}
+
+}
 
 LangList.kr = {
 close: "닫기",
@@ -733,7 +1013,26 @@ change_item_name_hint: "아이템 이름 입력...",
 enchant_list: ["물갈퀴", "살충", "폭발 저항", "친수성", "효율", "가벼운 착지", "화염검", "화염 보호", "화염활", "행운", "무한", "밀치기", "약탈", "바다 행운", "미끼", "힘", "원거리 보호", "보호", "때리기", "호흡", "날카로움", "섬세한 손길", "강타", "가시", "내구성"],
 enchant_level: "강도 : ",
 enchant_level_hint: "강도를 입력하세요...",
-enchant_msg: "인챈트를 하였습니다."
+enchant_msg: "인챈트를 하였습니다.",
+time_lock: "시간 고정",
+time_set: "시간 설정",
+time_hint: "시간 입력...",
+gm: "게임모드 변경",
+default_gm: "기본 게임모드 변경",
+gms : ["서바이벌", "크리에이티브", "어드벤처"],
+gm_changed : "(으)로 변경되었어요",
+health_hunger: "체력 & 허기 설정",
+health_hunger_hint: "체력 & 허기 설정",
+health_hunger_msg: "체력 및 허기가 설정되었어요",
+health_msg: "체력 및 최대 체력을 설정했어요",
+back_up: "맵 백업",
+back_up_start: "맵 백업을 시작합니다.",
+back_up_end: "현재 들어가있는 맵을 백업하였어요.",
+health: "체력",
+max_health: "최대 체력",
+health_set: "체력 설정",
+hunger: "허기"
 };
 Lang = LangList.kr;
+
 
