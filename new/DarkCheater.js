@@ -667,6 +667,94 @@ catch(e){
 Ui.printError(e);
 }
 };
+Ui.playerMenu = () => {
+try{
+menuP = new dark.ui.Window(ctx);
+var layout = new android.widget.LinearLayout(ctx);
+layout.setOrientation(1);
+var title = new android.widget.TextView(ctx);
+title.setText(Lang.player_menu);
+title.setTextSize(20);
+title.setTextColor(android.graphics.Color.WHITE);
+title.setGravity(android.view.Gravity.CENTER);
+var pad = dip2px(5);
+title.setPadding(pad, pad, pad, dip2px(15));
+layout.addView(title);
+
+var pls = [], ents = Entity.getAll();
+for(var n=0;n<ents.length;n++){
+if(!Player.isPlayer(ents[n])) continue;
+if(pls.indexOf(ents[n])!=-1) continue;
+pls.push(ents[n]);
+}
+
+var chs = [], targets = [];
+for(var n=0;n<pls.length;n++){
+chs[n] = new android.widget.CheckBox(ctx);
+chs[n].setText(Player.getName(pls[n]));
+chs[n].setId(n);
+chs[n].setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+onCheckedChanged : function(check, onoff){
+if(onoff) targets.push(pls[check.getId()]);
+else targets.splice(targets.indexOf(pls[check.getId()]), 1);
+}
+}));
+layout.addView(chs[n]);
+}
+
+var margin = new android.widget.LinearLayout.LayoutParams(-1, -2);
+var mar = dip2px(1);
+margin.setMargins(mar, mar, mar, mar);
+var btns = [];
+var menus = [Lang.health_set, Lang.move, Lang.kick, Lang.item_give, Lang.item_remove_all, Lang.gm, Lang.potion_effect, Lang.close];
+for(var n=0;n<menus.length;n++){
+btns[n] = new dark.ui.Button(ctx);
+btns[n].setText(menus[n]);
+btns[n].setId(n);
+btns[n].setLayoutParams(margin);
+btns[n].setOnClickListener(new android.view.View.OnClickListener({
+onClick : function(v){
+switch(v.getId()){
+case 0:
+
+break;
+case 1:
+
+break;
+case 2:
+
+break;
+case 3:
+
+break;
+case 4:
+
+break;
+case 5:
+
+break;
+case 6:
+
+break;
+case 7:
+menuP.dismiss();
+menuP = null;
+break;
+}
+}
+}));
+layout.addView(btns[n]);
+}
+layout.setPadding(pad, pad, pad, pad);
+var scroll = new android.widget.ScrollView(ctx);
+scroll.addView(layout);
+menuP.setContentView(scroll);
+menuP.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.CENTER, 0, 0);
+}
+catch(e){
+Ui.printError(e);
+}
+};
 Ui.closeAll = () => {
 if(menuI!=null){
 menuI.dismiss();
@@ -1031,8 +1119,14 @@ back_up_end: "현재 들어가있는 맵을 백업하였어요.",
 health: "체력",
 max_health: "최대 체력",
 health_set: "체력 설정",
-hunger: "허기"
+hunger: "허기",
+move: "이동",
+kick: "추방",
+kicked_msg: "명을 추방했어요",
+potion_effect: "포션 효과 부여",
+inven_cleared: "인벤토리를 초기화시켰어요",
+tp_types: ["플레이어에게 이동", "입력한 좌표로 이동"],
+select_player: "플레이어 선택",
+player_moved: "플레이어(들)을 이동시켰어요"
 };
 Lang = LangList.kr;
-
-
