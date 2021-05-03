@@ -716,7 +716,7 @@ btns[n].setOnClickListener(new android.view.View.OnClickListener({
 onClick : function(v){
 switch(v.getId()){
 case 0:
-
+Ui.healthDialog(targets);
 break;
 case 1:
 
