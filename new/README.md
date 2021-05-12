@@ -3,6 +3,7 @@
 © 2021 Dark Tornado, All rights reserved.
 
 * Dark Tornado's Main ModPE Script in 2021.
+* 블록 런처가 돌아가는 적당한 최신버전에서는 자꾸 팅겨서 다시 만드는 버전.
 
 ## To Do
 
